@@ -95,9 +95,10 @@ provenance, preserving notices and exact source refs. Decide the final public so
 URL and legacy redirect policy, artifact/package names and trusted signing identity.
 Keep an auditable mapping `legacy source/ref → reviewed reused component → Factory ref`.
 Do not copy private planning, provider operations or customer context into public docs.
-The [licensing decision](licensing.md) is still open, separately covering source,
-binaries/dependencies, embedded templates, user content and marketplace submissions.
-Public visibility does not select Apache-2.0 or relicense existing FSL code.
+The Principal selected [Elastic License 2.0](licensing.md) for newly owned Factory
+code, documentation, runtime and embedded templates. User content and marketplace
+submissions retain their own rights; dependencies retain original terms/notices.
+No legacy FSL source is relicensed and no automatic Apache transition applies.
 
 A candidate's provenance includes source repository and full commit, dependency
 lockfile, toolchain pin, target, artifact digest and signed release metadata. A digest

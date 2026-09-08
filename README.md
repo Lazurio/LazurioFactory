@@ -16,7 +16,7 @@ their current supported implementation.
 - [Selective Launchpad adoption and Doctor direction](docs/legacy-adoption.md)
 - [Developer commands and conventions](docs/development.md)
 - [Future shared marketplace](docs/marketplace.md)
-- [Open licensing decision and output boundaries](docs/licensing.md)
+- [Elastic License 2.0 and output boundaries](docs/licensing.md)
 - [Acceptance and implementation slices](docs/acceptance.md)
 - [Stack experiment and evidence](docs/stack-evidence.md)
 - [Agent contribution contract](AGENTS.md)
@@ -32,3 +32,6 @@ Creating it does not transfer history from `HumanAndMachines/Lazurio`, choose a
 license for reused code, redirect distribution channels or authorize product release.
 See [provenance](docs/decisions.md#provenance-and-publication) and
 [public development](docs/public-development.md).
+
+New first-party source is available under [Elastic License 2.0](LICENSE)
+(`Elastic-2.0`), a source-available license. See [scope and notices](docs/licensing.md).
