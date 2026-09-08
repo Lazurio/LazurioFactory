@@ -37,3 +37,14 @@ If real exposure is found, stop dissemination, notify the credential owner witho
 repeating the value, revoke/rotate through the existing provider, and obtain an
 explicit owner plan for history/artifact cleanup. A deleted file does not remove
 the credential from history or make an exposed credential safe again.
+
+## Building Lazurio with Lazurio
+
+The accepted communication direction is to adapt an existing agent through a community
+or custom role/persona and work on one's own project. Exact public copy is still a draft;
+profiles do not guarantee autonomy or success. Videos/streams may demonstrate real outcomes,
+failures and reusable profiles only after selecting and inspecting the shared material.
+Use synthetic examples where needed; inspect terminal/browser/notification surfaces and
+history for secrets or private company data. No customer or private screenshot becomes
+public evidence merely because it inspired a product decision. Publication remains an
+explicit scoped operation, separate from using the product or preparing a recording.

@@ -71,3 +71,12 @@ consumer to prepare and test a PR without a local toolchain. It does not require
 building a full store or autonomous account system. Public design contains these
 generic contracts; individual customers, financial strategy and operational custody
 remain in the owning private Organization documentation.
+
+## Later nontechnical founder discovery
+
+Creating or digitalizing a business through an Architect dashboard is a later research
+journey with a product teammate. Explore intent → task → observable result and visible
+cost/progress/stop controls. It is not a blocker for the first maker and technical-founder
+local release. The local-to-GitHub requirement is already accepted in F6 and must not be
+parked in this research. Dashboard onboarding, exact copy, pricing and execution design
+remain open; UI status text and promotional revenue claims do not prove a working product.

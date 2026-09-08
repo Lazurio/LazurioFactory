@@ -78,3 +78,29 @@ and queue purge, missing cost remains unknown, private custom text/hash exclusio
 rare-cell suppression, log/IP disposition and no rank from insufficient samples.
 A benchmark rerun and a voluntary field record must remain distinguishable in the
 comparison UI. No production collection or backend rollout follows from this document.
+
+## Product, community and commercial visibility from first public version
+
+Accepted requirement: product owners can assess real use, community participation and
+business outcomes from the first public product version. Keep three analytical purposes
+separate: product/community adoption, identified commercial records, and profile/model
+benchmarking. They must not become one user fingerprint or a causal leaderboard.
+
+Proposed baseline is an existing analytics capability plus an existing CRM, with each
+source retaining ownership. No vendor is selected. Compare reuse against a manual,
+source-linked report before building any new data platform. Product signals should cover
+first completed work, returning use and subsequent completed work; community signals cover
+shared/adapted profiles and meaningful feedback, not just reach/downloads. Commercial
+records describe explicit leads, implementations and realized revenue using their owning
+CRM/financial sources. Definitions, denominator, observation window, freshness, missingness
+and consent coverage accompany every metric; self-selected samples do not represent all
+users. Never infer lifetime customer value or conversion from anonymous totals.
+
+Local measurement remains voluntary, minimal, default-off and content-free under the
+consent rules above. Do not automatically join anonymous/pseudonymous use to a customer,
+email, provider identity or CRM record. Any proposed identified measurement has a separate
+purpose, explicit informed consent and access/retention review before implementation;
+first-version visibility does not depend on that join. Customer financial/business data
+stays in the owning private Organization. No collection or vendor integration is authorized
+here. The first analyst pilot consumes permitted sources and clearly reports unavailable
+data; a reporting requirement must never be met with fabricated counts or unsafe collection.

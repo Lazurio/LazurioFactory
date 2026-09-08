@@ -15,9 +15,15 @@ the other slices are complete.
 | 2 — Managed generation | Slice 1 and ownership/schema contract | Fresh dedicated human environment produces only owned Root files, starts full app; unknown/edited paths preserved; rollback drill |
 | 3 — Profile capability | Slice 2 and accepted behavior schema | CLI and Launchpad use the same profile use case; deterministic generation, stale revision refusal, session pin/restart and upgrade preservation |
 | 4 — Environment purposes | Slices 2–3 and hosting amendment | Dedicated human/Buddy/AI Colleague acceptance with correct Principal, Owner, custody and unavailable-capability behavior |
-| 5 — Migration rehearsal | Slices 1–4, legacy compatibility and restore mapping | Faithful dirty Source Root fixtures plus shared-workshop transition prove preservation, interrupted recovery and no-op unknown state |
-| 6 — Opt-in cohorts | Rehearsal and explicit per-owner migration approval | Small native cohort on each supported OS, user completion evidence, observation and recovery; halt on data loss/identity ambiguity |
+| 5 — Migration rehearsal | Relevant slices 1–4, legacy compatibility and restore mapping | Faithful dirty Source Root fixtures plus shared-workshop transition prove preservation, interrupted recovery and no-op unknown state |
+| 6 — Opt-in cohorts | Qualified consumer slices; rehearsal and explicit migration approval for migrating cohorts | Small native cohort on each supported OS, user completion evidence, observation and recovery; halt on data loss/identity ambiguity |
 | 7 — General availability and retirement | Successful cohorts, public release approval | Published support matrix and release provenance; legacy install/update paths retired by declared criteria, backups retained by policy |
+
+Fresh local cohorts qualify distribution, generation, profile and local-founder behavior;
+they do not wait for unrelated hosted/shared-workshop migration. Existing-Root migration
+cohorts must pass their preservation/recovery gate; hosted cohorts additionally need the
+hosting amendment and envelope proof. Broad support/retirement claims require every
+claimed cohort's evidence. The three-OS/two-harness first-transition gate stays binding.
 
 Do not silently fold ongoing legacy maintenance into a new Factory rewrite. Existing
 fixes continue with their owners; selectively port proven contracts with provenance.
@@ -66,7 +72,8 @@ conflicts are visible. Export excludes private data and effective authorization.
 Imported proposed mandates remain inactive without local scoped consent and stop
 being effective after revocation. One catalog may present both profiles and modules,
 but tests reject a profile installation targeting an Organization and require the
-Organization's real module contract/rights for a module. Marketplace implementation
+selected project's real module contract/rights for a module (local owner authority
+before binding, live provider rights for connected operations; see F6). Marketplace implementation
 is a future workstream, not an added foundation service.
 
 ## Coordinator evals
@@ -133,3 +140,54 @@ support for every harness. This does not relax the full first-transition native 
 The first task may use owned files/personal repositories in the Principal's own
 Personalspace without an Open Connector. Optional integration absence is not failure;
 company repo work still routes to the Organization and its instructions/rights.
+
+## Technical founder local-to-GitHub acceptance
+
+First-version priority, dependent on the explicit F6 amendment and implemented shared
+manifest/lifecycle contract, not on dashboard research or marketplace backend:
+
+1. On a clean owner-controlled fixture without GitHub credentials/account, create a
+   useful project with local Git repos and modules; complete a bounded task in each
+   initial harness and exercise app start/status/stop through CLI and Launchpad.
+   Doctor reports intentionally local state without demanding remote membership.
+2. Make local commits, branches/tags, staged and unstaged edits, untracked files and
+   a linked worktree. Record exact refs/content. Local use and restart remain possible
+   without connecting a provider; no hidden subscription or upload is triggered.
+3. Explicitly select an authorized test GitHub identity, exact Organization/repos and
+   visibility; preview binding and publish scope. Connect while preserving files,
+   commit IDs, refs and worktree linkage, then prove provider identity/rules discovery.
+   A private/public destination distinction is reviewed before upload, including history.
+4. Wrong account, revoked rights, existing/divergent remote, secret-bearing history,
+   offline retry and partial multi-repo completion preserve local work and stop unsafe
+   upload. Retry checks confirmed remote state without duplicate creation or overwrite.
+   Cancellation before upload leaves local usability; after upload requires an explicit
+   reconciliation plan, not remote deletion disguised as rollback.
+5. No GitHub binding test starts hosting or deploys the app. No fake local Organization
+   roles or memberships satisfy connected operation checks. Existing connected fixtures
+   retain current access semantics after the schema amendment.
+
+## Product visibility and analyst dogfood acceptance
+
+Before the first public product version, show source-linked product activation,
+returning use/completed work, community activity and commercial outcomes, with date range,
+denominators, freshness and unknown values. Prove opt-out use still works, no content is
+sent, no anonymous event is automatically joined to CRM identity, and benchmarking is
+separate. An existing analytics/CRM proposal is sufficient for design; actual collection
+needs the consent/transport gate in profile-evidence.md. No fabricated zero fills gaps.
+
+The first AI Colleague pilot uses the same pinned transferable analyst profile without
+waiting for a marketplace backend. Prove installation → profile adoption → actual own-seat
+Organization access → scheduled bounded work → attributable daily report and deeper weekly
+analysis → compatible update/recovery. Each finding references its source and observation
+window; distinguish facts, hypotheses and recommendations. Missing/revoked access yields a
+missing-data report, never another identity's credentials. Source content stays private.
+
+Before any run, the owner approves the dedicated Machine, separate seat/identity, human
+custodian, scopes, report destination and effective mandates. Reuse an existing scheduler
+and report store. Exercise sleep, restart, missed runs, duplicate wakeups, interrupted work,
+revocation, upgrade and rollback: show missed periods, coalesce catch-up under an agreed
+policy, verify checkpoints, avoid duplicate reports/actions and never claim work while
+asleep. Schedule/timezone, retention and catch-up policy must be selected before activation.
+Named equipment/custody and operational evidence belong only to private owner records.
+This gate specifies future evidence; no identity, machine or scheduled job exists by
+virtue of this document and this audit authorizes none.

@@ -184,3 +184,71 @@ claim of completed implementation or a second delivery ledger.
 | Provider business model | Not technical public-source authority | Owning Organization's private knowledge and planning; no customer/business data here |
 | Paid immutable modules | No purchased-release integration/update consumer | marketplace.md: source purchase and integration |
 | Dashboard assistance | No scoped execution/budget/recovery contract | hosted-assistance.md |
+
+## F6 — Two priority local entry journeys
+
+**Accepted product requirement:** maker profile adoption in an existing harness and
+technical founder local preparation are both priority first-version journeys. A founder
+must be able to build a useful organization/project and modules locally without a
+GitHub account, then explicitly connect their own GitHub while retaining files and Git
+history. This is no longer deferred dashboard research. GitHub is remote collaboration
+and access authority for connected resources; it is not application hosting.
+
+**Proposed amendment, not a deployed model:** distinguish owner-local project preparation
+from a GitHub-bound Organization. The former is usable local work, not a hollow preview:
+local repos, module declarations, instructions and app lifecycle run under the existing
+Machine/filesystem owner's authority. It has no fabricated GitHub identity, Organization
+membership, roles, remote rights or independent ACL. Product language may describe
+preparing an organization, but discovery must show that it is not yet provider-bound.
+Reuse the project/module manifest owner with a versioned binding distinction; do not
+invent a registry, account system or parallel permission store. Exact schema, naming
+and physical layout require the maintained Organization decision owner's amendment
+before implementation. Local files remain useful without a remote; optional later
+binding is not a trial expiry or code unlock.
+
+| Alternative | Assessment |
+| --- | --- |
+| Require GitHub before useful project work | Simplest current baseline, but fails the accepted founder requirement |
+| Treat local declarations as provider Organization rights | Superficially uniform, but creates false authority and an implicit second ACL; reject |
+| Owner-local preparation, explicit provider binding | Recommended: one local data owner, preserved Git history, live GitHub authority only for connected operations; requires visible lifecycle distinction |
+
+Amend the current Organization=GitHub definition and its discovery/materialization,
+module and Doctor consumers together. Existing connected Organizations retain their
+provider identity and rights. No current config is silently reclassified. This proposal
+belongs alongside the existing maintained Organization model, not a new global decision
+number or a hidden product exception. The real consumer and recovery gate are in
+[acceptance](acceptance.md#technical-founder-local-to-github-acceptance).
+
+Binding plans must identify the actual GitHub account, exact destination Organization
+and each repo, live create/write rights and visibility before any upload. Mark each
+repo bound only after confirming its remote identity and uploaded ref; mixed completion
+stays explicit until every selected binding is verified. Preserve commit IDs,
+branches, tags, dirty/index/untracked work and linked worktrees. Public destinations
+require a separate reviewed publication decision and history/content screening; secrets
+or private history stop upload, never trigger automatic history rewriting. Nonempty
+or divergent remotes require an explicit integration plan. A partial multi-repo upload
+cannot be rolled back by deleting remote work: record confirmed outcomes, recheck them
+on retry and preserve local usability. Provider binding is not app deployment.
+
+## F7 — First-version outcome visibility and first analyst pilot
+
+Accepted: from the first public product version, provide a view of product use,
+community participation and commercial outcomes. It must show missing data honestly;
+profile/model benchmarking remains a separate analytical purpose. Reuse existing
+analytics and CRM capabilities as the proposed baseline; no vendor is selected and no
+new collector or CRM is implemented. The [measurement contract](profile-evidence.md)
+defines consent, separation and acceptance.
+
+Accepted first concrete AI Colleague dogfood role: product/growth analyst, running a
+versioned transferable profile on a dedicated owner-approved Machine with its own
+seat/identity, one human custodian and actual Organization grants. Daily evidence-based
+results/deviations/missing-data/recommendation reports and a deeper weekly analysis
+exercise installation through update/recovery. Hardware, named custodians, Organization
+data, effective mandates and credentials stay in private owner documentation. This
+foundation authorizes no provisioning, identity, scheduler or report publication.
+
+Accepted communication direction: adapt an existing agent with a community or custom
+role/persona and work on your project. Exact copy remains a draft. Build the product
+using the product; publish deliberately selected reusable profiles and sanitized evidence
+of outcomes and failures. A profile alone cannot guarantee autonomy, runtime availability
+or task success. Sharing/streams do not relax private-data or publication boundaries.

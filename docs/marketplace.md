@@ -6,9 +6,11 @@ executable extension capability in this foundation.
 
 One shared marketplace for profiles and Organization modules is an accepted future
 product requirement. Discovery/presentation, authorship, versions and descriptions
-are shared; package contracts and installation targets remain distinct. A module
-installs only into an explicitly selected Organization, with its manifest/schema,
-repo ownership and live access/publish rules. The marketplace never becomes a
+are shared; package contracts and installation targets remain distinct. A module targets an explicitly selected project/Organization with its manifest/schema
+and ownership rules. Connected repo operations require live access/publish rights.
+The accepted local-founder journey and proposed binding distinction in
+[decision F6](decisions.md#f6--two-priority-local-entry-journeys) also permit useful
+owner-local module work before GitHub; its schema/amendment must be qualified first. The marketplace never becomes a
 second ACL. Paid module snapshots are an accepted future consumer below; exact commercial terms
 and module licenses remain separate decisions.
 
@@ -126,3 +128,15 @@ Profiles may also be paid offerings. Whether a starter profile is free, profile 
 license and update entitlement remain decisions; no free-trial credit or universal
 free starter is implied. Payment does not change the profile's declarative installation,
 capability or consent boundaries. The same catalog covers profiles and modules.
+
+## Local project consumer
+
+For the accepted founder path, a permitted module snapshot can be integrated and run
+in an explicitly owned local project without a GitHub login. License/entitlement and
+capability checks still apply; absence of provider rights blocks remote access, not
+owned local work. Preserve source provenance, custom changes and local Git history.
+Later provider binding follows F6 and does not silently upload a purchased source
+snapshot to a public repo. This extends the module consumer target, not the profile
+format, marketplace ACL or product updater. The connected customer PR flow above remains
+unchanged. Local acquisition must use a legitimately available artifact; this is no
+permission to bypass a private source repository's access or licensing.

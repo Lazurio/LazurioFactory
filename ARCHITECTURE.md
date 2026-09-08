@@ -17,7 +17,9 @@ private data and credentials remain in their existing custody boundaries.
 2. A generated non-Git Root owns only enumerated instructions/configuration.
    Organization repos, Personalspace, Git state and runtime data are never generator inputs to overwrite.
 3. Every operation identifies the actual Principal, Machine Owner and higher host/operator boundary.
-   GitHub remains access authority; text, local paths and profile labels cannot grant access.
+   Owner-local work uses the existing Machine/filesystem boundary; GitHub remains
+   access authority for connected provider operations. Text, local paths and profile
+   labels cannot grant provider access (proposed binding distinction in decision F6).
 4. CLI and UI invoke the same use cases, validation and errors. Each persistent fact has one owner.
 5. A failed operation preserves the last known usable generation or stops with recoverable evidence.
    Unknown state is a refusal to mutate, not permission to rebuild.
@@ -164,7 +166,8 @@ reviews custom content for private data and excludes effective authorization and
 One future marketplace covers both profiles and Organization modules. It shares
 catalog presentation, discovery, authorship, descriptions and version metadata, but
 keeps separate installation contracts: profile to a specific Machine, module to an
-explicit Organization under its own rules and live GitHub rights. No universal
+explicit project/Organization under its own rules (owner-local preparation in F6,
+live GitHub rights for connected operations). No universal
 package or second Organization access authority follows from the shared catalog.
 
 The profile changes instructions and presentation; capability depends on actual
@@ -204,7 +207,7 @@ level and avoid making an untrue isolation claim.
 ## Discovery at task entry
 
 A Machine profile is not a snapshot of Organization access. Generated base AGENTS.md
-instructs the agent to use the installed CLI's shared discovery capability to identify
+instructs the agent, when entering a connected Organization, to use the installed CLI's shared discovery capability to identify
 the active provider identity, accessible Organizations/repos, known local paths and
 the permitted materialization procedure. It then reads the selected Organization's
 AGENTS.md before work there. Root profiles never embed an Organization roster, its
@@ -255,3 +258,29 @@ Personalspace. No Organization or Open Connector is required; external integrati
 are optional through supported tools and the applicable access boundary. Company
 repositories still belong to their Organization; another Principal's Personalspace
 is never an onboarding fixture or import source.
+
+## Technical founder: local preparation before GitHub
+
+Both local entries are first-version priorities. The founder can prepare a useful local
+organization/project with modules and Git history before creating or connecting a GitHub
+account. [F6](docs/decisions.md#f6--two-priority-local-entry-journeys) explicitly proposes
+how this accepted requirement changes the current Organization=GitHub model: owner-local
+project preparation is distinct from a provider-bound Organization, with no invented
+membership, roles or second ACL. The exact schema and canonical amendment remain pending;
+this foundation does not implement either state or mutate existing installations.
+
+Discovery starts by identifying the selected local scope. Maker Personalspace and
+owner-local project work do not require a provider login. Connected Organization work
+uses the live provider probe described above. CLI, Launchpad and Doctor share the same
+binding-aware manifest/lifecycle contract: absent GitHub in an intentionally local project
+is not a readiness failure, while a connected target with missing access remains denied.
+Module local use validates ownership, license, manifest and required capabilities; remote
+operations additionally require actual provider rights. A template cannot silently attach
+a remote, enable hosting, grant access or start a paid service.
+
+Explicit later binding inventories all affected local repos and work, previews exact
+remote destinations/visibility and preserves history and files. Nonempty remote conflicts,
+wrong accounts, revocation and partial completion have recovery gates in F6 and acceptance.
+There is one project data owner throughout; connecting GitHub neither unlocks local code
+nor deploys an app. Continued local use is allowed; team collaboration remains under the
+connected provider contract rather than local role emulation.
