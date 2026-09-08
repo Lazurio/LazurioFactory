@@ -129,3 +129,7 @@ The fixture has no Organization and no hosting account or platform credits; empt
 discovery must not block first use. Later Organization onboarding is a distinct journey.
 Profile selection is evidence-informed, not a competence guarantee or a promise of
 support for every harness. This does not relax the full first-transition native gate.
+
+The first task may use owned files/personal repositories in the Principal's own
+Personalspace without an Open Connector. Optional integration absence is not failure;
+company repo work still routes to the Organization and its instructions/rights.

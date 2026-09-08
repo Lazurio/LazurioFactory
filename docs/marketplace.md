@@ -121,3 +121,8 @@ a local customization, then an upstream update with a deliberate conflict. Prove
 reviewable diff, retained attribution and data, denied installation without repo rights,
 tamper rejection and no automatic publish after purchase. Community and paid modules
 share this one catalog; they do not share the profile installation contract.
+
+Profiles may also be paid offerings. Whether a starter profile is free, profile pricing,
+license and update entitlement remain decisions; no free-trial credit or universal
+free starter is implied. Payment does not change the profile's declarative installation,
+capability or consent boundaries. The same catalog covers profiles and modules.

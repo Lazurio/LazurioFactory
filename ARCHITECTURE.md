@@ -249,3 +249,9 @@ use the same settings owner; a full marketplace backend is not needed for this p
 Exact packaging and profile acquisition UI remain proposals. A profile transfers
 instructions, not proven competence or identical capabilities across harnesses.
 Codex and Claude Code are the initial supported consumers; others are future extensions.
+
+First work may use the Principal's own files or personal repositories in their own
+Personalspace. No Organization or Open Connector is required; external integrations
+are optional through supported tools and the applicable access boundary. Company
+repositories still belong to their Organization; another Principal's Personalspace
+is never an onboarding fixture or import source.
