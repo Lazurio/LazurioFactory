@@ -80,3 +80,42 @@ decision while presenting an understandable artifact. Score outcome completion,
 scope/privacy, verified evidence, recovery and publication authority separately.
 Record the exact harness/tool capability set. A generated instruction file alone
 cannot pass these evals.
+
+## First usable transition gate
+
+Before a real-root transition, an official installation must work natively on **macOS,
+Windows and Linux**, with the full CLI, real Launchpad and correctly generated base
+AGENTS.md. First supported agent environments are **Codex and Claude Code**. Each OS
+must have a declared supported architecture and actual cold-session harness evidence;
+unavailable combinations stay unqualified and cannot be silently waived for the first
+transition claim. Additional architectures retain independent truth labels above.
+
+The minimum preserved Launchpad journey selects a discovered permitted Organization
+and module, starts its declared App, shows readiness/status and stops only its owned
+process tree. CLI must show equivalent results and useful denied/offline/invalid-manifest/
+failed-start errors. This scope does not promise every unspecified legacy UI feature.
+
+For each native OS and each initial harness, record exact installer artifact, OS/ABI,
+harness/model version and a cold-start task proving generated instruction discovery,
+a packaged skill invocation and correct Organization rule loading. The task must
+exercise behavior (scope selection, a bounded result and unauthorized-action refusal),
+not simply read back a marker string. Record mismatched/missing instructions and skill
+as failures. Codex and Claude adapters must consume one canonical instruction/skill
+source; required filename/entrypoint compatibility is an adapter concern, not divergent
+policy copies. Verify actual documented harness loading behavior when implementing.
+
+| Accepted requirement | Required evidence before its consumer launches |
+| --- | --- |
+| Two test modes | Three concurrent isolated fixtures AND one integrated candidate whole-Machine acceptance, as specified in release-cycle.md |
+| Dynamic discovery | Verified identity/access separate from local/stale state; correct Organization AGENTS loading; revoke preserves local work |
+| Expertise / proactivity | Same marketing domain fixture under responsive and proactive modes, separate quality/oversight scores; no background work without runtime/trigger |
+| Mandate scope | Machine-only cannot publish to Organization; Organization-only cannot activate Machine; cross-scope action needs both; import/revocation tests |
+| Voluntary evidence | Default-off, inspected minimized payload, no private custom fingerprint/content, missing cost unknown, bias/rare-cell handling |
+| Community | Author-selected export preview, provenance/variant lineage, report/moderation disposition; no implicit upload |
+| Purchased module | Immutable snapshot to tested customer-owned PR, local customization preserved on update/conflict, payment grants no access |
+| Hosted assistance | Advice versus draft versus publication, actual isolated provider context, budget/cancel/resume/idempotency and no cross-customer access |
+
+Profile evidence design starts with the profile capability. No telemetry service,
+marketplace billing or hosted runner is a prerequisite to the first local installed
+consumer. Their future launch gates remain explicit in the corresponding contracts;
+no documented acceptance scenario is represented as already executed here.

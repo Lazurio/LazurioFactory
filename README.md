@@ -17,6 +17,8 @@ their current supported implementation.
 - [Developer commands and conventions](docs/development.md)
 - [Future shared marketplace](docs/marketplace.md)
 - [Elastic License 2.0 and output boundaries](docs/licensing.md)
+- [Profile evidence and voluntary measurement](docs/profile-evidence.md)
+- [Scoped hosted advice and draft execution](docs/hosted-assistance.md)
 - [Acceptance and implementation slices](docs/acceptance.md)
 - [Stack experiment and evidence](docs/stack-evidence.md)
 - [Agent contribution contract](AGENTS.md)

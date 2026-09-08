@@ -10,7 +10,9 @@ content, history and artifact contents before sharing. Follow `docs/public-devel
 Do not invent a secret store or hide harmless implementation details.
 
 Read `ARCHITECTURE.md`, `docs/decisions.md`, `docs/migration-and-recovery.md` and
-`docs/acceptance.md` before implementation. This foundation is a proposal and bounded
+`docs/acceptance.md` before implementation. Read `docs/release-cycle.md` for the
+two distinct test/activation paths, `docs/profile-evidence.md` for optional measurement
+and `docs/hosted-assistance.md` before any hosted advice/execution work. This foundation is a proposal and bounded
 proof, not authorization to migrate an installation, transfer a repository, publish
 a release or change access. Distinguish proposed contracts from executable evidence.
 
@@ -34,3 +36,17 @@ The proof has no install/update/profile-write/migrate command. Do not quietly tu
 it into one. Implement each subsequent slice only after its recorded acceptance and
 decision prerequisites are satisfied. Test behavior and failure recovery, not source
 text shape or arbitrary file-size limits. Compiling for an OS is not testing on it.
+
+First transition acceptance requires official installation and real CLI/Launchpad on
+macOS, Windows and Linux plus actual Codex and Claude Code instruction/skill use.
+Do not equate compilation, prompt text or the preview proof with that acceptance.
+Three parallel worktree tests isolate artifacts, process PATH, fixtures, ports and
+state. They never activate the Principal's daily installation. Whole-Machine candidate
+activation is a separate explicit action after integration and recovery qualification;
+this design is not permission to perform it now.
+
+Profiles must direct discovery of live identity/rights and target Organization rules,
+not copy a roster. Separate expertise from proactivity and Machine from Organization
+mandates. Reuse existing state owners. Measurement is opt-in and content-free; do not
+claim guaranteed anonymity or upload custom instructions. Marketplace purchases and
+credits do not grant access, installation authority or publication consent.

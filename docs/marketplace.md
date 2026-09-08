@@ -9,7 +9,8 @@ product requirement. Discovery/presentation, authorship, versions and descriptio
 are shared; package contracts and installation targets remain distinct. A module
 installs only into an explicitly selected Organization, with its manifest/schema,
 repo ownership and live access/publish rules. The marketplace never becomes a
-second ACL. No commercial terms, billing or license choice are inferred.
+second ACL. Paid module snapshots are an accepted future consumer below; exact commercial terms
+and module licenses remain separate decisions.
 
 The active profile remains per Machine. A future marketplace distributes versioned
 profile definitions which a Principal deliberately selects for a particular local
@@ -71,3 +72,52 @@ activation. A new version produces an explicit diff and does not expand authorit
 The test includes attempted secret/Root/data import and attempted install script.
 It proves refusal without executing the content. Service launch and public profile
 publication retain their own explicit mandates.
+
+## Community producer and consumer loop
+
+The product starts from a concrete result: discover an example, share its profile,
+try it, adapt it and return experience. Profiles are primarily compared and selected
+in the catalog; customization uses Lazurio's existing local profile settings, not a
+second configuration engine inside the store. A submission carries purpose, selected
+examples, model/tools, prerequisites/proposed mandates, limits, author and version
+provenance. Derived variants retain attribution and their source revision. Discussion
+and qualitative experience sit beside the separate [evidence types](profile-evidence.md).
+
+Sharing is explicit. Preview the exact export; default to excluding private/custom
+instructions and include only custom text deliberately selected by its author after
+review. Never upload automatically. Remove secrets, Organization content, runtime
+state and effective mandates. A useful-result example is not blanket permission to
+publish its source data. Future trust work must cover author verification, reports,
+moderation, malicious content, version withdrawal and appeal/disposition. A withdrawn
+listing must not silently delete an installed local variant or its user's work.
+
+## Paid module: immutable source purchase and integration
+
+An author may offer a module repository release or immutable source snapshot. Public
+visibility of all paid repositories is not decided. The transaction identifies the
+exact version/digest, source provenance and applicable module license. Payment or a
+dashboard receipt does not itself protect source, prove code quality, grant Git access,
+install the module or authorize publication. Factory ELv2 does not choose its license.
+
+The consumer explicitly selects a customer Organization. With the applicable source
+entitlement and live repository rights, its agent verifies the snapshot, dependencies,
+license and compatibility, then prepares a tested adaptation/integration in that
+Organization's own repo/PR. The customer owns its modifications subject to underlying
+licenses; source and data remain under their normal owners, with no platform lock-in.
+Preserve the imported base revision/digest and license notices as provenance. Review
+migration/security assumptions before execution; malicious hooks cannot run merely
+because a module was bought. Publication remains a distinct authorized action.
+
+A later upstream release is another deliberate integration against the recorded base
+and local changes. Never overwrite the customer's derived variant, data or configuration.
+Conflicts, incompatible schema or missing update rights stop the operation and preserve
+work. Do not turn module updates into the product updater. Future decisions include
+update entitlement, module redistribution/adaptation rights, platform share, support,
+refunds and author payouts. Do not infer prices, subscriptions or universal source
+visibility from this product direction.
+
+Acceptance uses an immutable synthetic module, a licensed import into a fixture repo,
+a local customization, then an upstream update with a deliberate conflict. Prove a
+reviewable diff, retained attribution and data, denied installation without repo rights,
+tamper rejection and no automatic publish after purchase. Community and paid modules
+share this one catalog; they do not share the profile installation contract.

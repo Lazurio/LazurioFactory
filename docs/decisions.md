@@ -110,8 +110,9 @@ are created by this draft.
 ## Open gates, owners and resolution evidence
 
 The [release cycle proposal](release-cycle.md) recommends one product version,
-immutable candidates and channel promotion without rebuild. It remains unapproved,
-including npm version semantics, automatic update detection and explicit activation.
+immutable candidates and channel promotion without rebuild. Its two test paths, explicit Machine-wide candidate activation and promotion of the
+same qualified artifact are accepted requirements. Concrete verbs, version/transport
+semantics, trust mechanism and automatic update detection remain implementation proposals.
 
 | Gate | Accountable function | Evidence needed |
 | --- | --- | --- |
@@ -124,3 +125,62 @@ including npm version semantics, automatic update detection and explicit activat
 
 Function labels describe required responsibility, not granted permissions. Concrete
 assignment and scheduling belong to the Organization's Mission Control.
+
+## F4 — Qualification and one active installed product
+
+Accepted: the first usable transition version requires official native macOS, Windows
+and Linux installation, full CLI, real Launchpad and generated base instructions used
+by actual Codex and Claude Code consumers. Preserved Launchpad scope is module
+discover/start/status/stop plus the necessary navigation, readiness and error handling;
+full unspecified legacy feature parity is not an accepted promise.
+
+Accepted: three simultaneous worktree tests are isolated; a separately integrated,
+qualified candidate may then be explicitly selected for the Principal's whole dedicated
+Machine and real Root before stable release. These are not alternatives. A per-shell
+override alone cannot prove daily activation. Repeated PATH rewriting and a separate
+candidate updater are rejected because they create conflicting selectors. Extend the
+installer's existing version selection and lifecycle owner; details remain proposals.
+Build failure preserves active software. Program rollback and data recovery are separate.
+
+## F5 — Profiles, evidence and the single marketplace
+
+Accepted: expertise and proactivity are independent, profiles are Machine-local and
+can propose Machine or Organization mandates without transferring effective consent.
+Generated instructions discover current access instead of embedding an ACL snapshot.
+
+Accepted: optional minimal field measurement informs profile/model/harness/task fit;
+community sharing has explicit preview and author choice. Benchmark and field results
+remain distinct. No guarantee of anonymity, universal best profile or backend exists.
+Reuse profile version/provenance and existing consent/runtime owners rather than a
+new recommendation identity graph, configuration engine or telemetry platform.
+
+Accepted module consumer: an immutable authored release is deliberately integrated
+as a tested draft into a customer's own Organization; later updates preserve local
+changes through another integration. Licensing/entitlement/support/visibility terms
+are independent open decisions, not consequences of Factory's ELv2.
+
+Accepted hosted-assistance outcome: scoped advice and preparation of customer-owned
+repo drafts can run without a local developer toolchain. Credit budget is not access
+or publication authority. The provider isolation, credential delegation, charging and
+lifecycle mechanisms require their actual consumer and failure evidence before launch.
+No implementation, account service, billing or live migration is authorized here.
+
+## Discussion gap audit and implementation routing
+
+The initial foundation covered ownership, preservation and a preview proof. The
+following gaps are now specified as contracts; this table is a coverage map, not a
+claim of completed implementation or a second delivery ledger.
+
+| Clarified requirement | Gap in initial foundation | Canonical implementation contract |
+| --- | --- | --- |
+| First transition usable on three OS / two harnesses | Compilation matrix did not bind actual harness behavior | acceptance.md: first usable transition gate |
+| Retire legacy development checkout | Legacy path was only provenance | migration-and-recovery.md: retirement gate |
+| Isolated tests and Machine candidate | No explicit distinction or active-selector lifecycle | release-cycle.md: two modes, state/failure contract |
+| Dynamic discovery | Access checks lacked generated-agent entry flow | ARCHITECTURE.md: discovery at task entry |
+| Expertise and proactivity | Collaboration/detail omitted domain competence | ARCHITECTURE.md: axes and profiles |
+| Machine and Organization mandates | Scope was underspecified | ARCHITECTURE.md: scoped consent intersection |
+| Optional evidence | No minimization/consent/bias contract | profile-evidence.md |
+| Community loop | Catalog fields lacked share/try/adapt/feedback and moderation | marketplace.md: community loop |
+| Provider business model | Not technical public-source authority | Owning Organization's private knowledge and planning; no customer/business data here |
+| Paid immutable modules | No purchased-release integration/update consumer | marketplace.md: source purchase and integration |
+| Dashboard assistance | No scoped execution/budget/recovery contract | hosted-assistance.md |

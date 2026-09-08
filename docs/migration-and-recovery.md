@@ -145,3 +145,19 @@ routes/services and retire the old shared profile and docs in their owning repos
 An unresolved attribution or restore test blocks decommission, not permission to
 run two writable environments indefinitely. No current infrastructure is touched
 by the Factory foundation.
+
+## Legacy source checkout retirement
+
+`development/Lazurio` is not a target standard component of a Managed working Root;
+Factory development belongs in the Organization's `productionspace/LazurioFactory`.
+Do not equate path relocation with runtime activation. Before retiring old source,
+inventory shell/launcher/service paths, dependencies, scripts, open sessions, module
+references and all linked worktrees in addition to refs/index/dirty/untracked/ignored
+work. Prove no active consumer requires it and that recovery can restore the captured
+state. Unattributed work or a remaining dependency blocks deletion; retain the checkout
+as migration provenance until the explicit cleanup gate. This preparation deletes none.
+
+The [two qualification modes](release-cycle.md) remain separate from migration. A fixture
+is not a real-root checkpoint. Integrated candidate activation on an existing Source
+Root cannot bypass the Source-to-Managed plan. A product downgrade cannot restore a
+root move, schema or user writes; the recovery plan must evaluate each independently.

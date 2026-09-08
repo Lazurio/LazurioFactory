@@ -87,8 +87,12 @@ Detailed physical layout is an installer-slice decision, constrained by these ow
 Factory developers use a separate source checkout, e.g. an Organization's
 `productionspace/LazurioFactory`. Existing `development/Lazurio` legacy-source
 coordinates remain migration provenance; changing a directory name does not select
-a runtime. Development override is explicit, reversible and displays exact provenance;
-ordinary upgrades never consult it. No second active Root is created.
+a runtime. Legacy `development/Lazurio` is not part of the target standard working Root.
+Retire an existing checkout only through the dependency/ref/worktree/dirty-work
+inventory and restore gates in the migration contract; nothing is removed now.
+Isolated worktree testing and explicit integrated-candidate Machine activation are
+different accepted workflows, defined in [release lifecycle](docs/release-cycle.md).
+Program selection and Root selection are independent; source edits are never live.
 
 ## Environment composition
 
@@ -96,7 +100,8 @@ ordinary upgrades never consult it. No second active Root is created.
 | --- | --- | --- |
 | Platform | Detected OS, architecture, supported ABI and capabilities | Linux is Buddy; Windows is nontechnical |
 | Purpose | Human work, Buddy acting for a human, or AI Colleague seat | Organization role or permission |
-| Collaboration | Coordinator behavior and delegation preference | Automatic access, merge or release authority |
+| Expertise | Domain methods and task competence, e.g. senior marketing specialist | Proven quality from a senior label |
+| Collaboration / proactivity | Responsive drafts or proactive coordination within mandate | A persistent runtime, automatic access, merge or release authority |
 | Explanation detail | Concise outcome versus implementation detail | Different approval authority |
 | Locale | Versioned root-owned instruction language and UI language | Translation or modification of Organization-owned content |
 
@@ -148,7 +153,12 @@ identifies its input revisions; custom source is the supported authoring surface
 A proposed mandate is not effective authorization. The actual Principal in this
 installation must supply explicit scope, consent provenance and revocation within
 live rights. Import cannot transfer the author's consent, credentials or active
-mandate. Use existing mandate authority, not profile metadata as a new IAM. Export
+mandate. Mandates can concern a Machine (tools, version activation, owned processes) or
+an exact Organization (campaign, publication, merge). Each requires an authorized
+Principal and its own scope; Machine scope cannot grant Organization rights or the
+reverse. An action crossing both boundaries must satisfy both, plus live provider
+rights and higher constraints. Use the existing mandate owner/model, not profile
+metadata as a new IAM. Export
 reviews custom content for private data and excludes effective authorization and secrets.
 
 One future marketplace covers both profiles and Organization modules. It shares
@@ -190,3 +200,39 @@ Only an independently controlled harness or OS boundary can technically prohibit
 self-modification. Hidden directories and read-only policy text are not security
 enforcement when the Agent can change permissions. Report the actual enforcement
 level and avoid making an untrue isolation claim.
+
+## Discovery at task entry
+
+A Machine profile is not a snapshot of Organization access. Generated base AGENTS.md
+instructs the agent to use the installed CLI's shared discovery capability to identify
+the active provider identity, accessible Organizations/repos, known local paths and
+the permitted materialization procedure. It then reads the selected Organization's
+AGENTS.md before work there. Root profiles never embed an Organization roster, its
+instructions or private data. An Organization list is not authorization for all actions.
+
+One provider probe serves CLI, Launchpad and Doctor. Its result separates provider
+verification time/status and exact identity from checkout presence/path/health and
+stale/offline metadata. Proposed result states include verified, denied, unavailable
+and stale; cache is evidence with age, never a grant. Access for the exact mutation
+is rechecked at the operation boundary. A provider outage prevents claims of fresh
+rights; safe local inspection may continue under the applicable local boundary.
+Revocation blocks unauthorized provider operations but does not delete local work.
+Wrong identity, stale path or inaccessible repo leads to explanation and a legal
+materialization route, not credential substitution or cloning another Principal's data.
+
+## Profiles, evidence and assistance
+
+The same senior marketing specialist may respond to assignments and hand over drafts,
+or proactively coordinate authorized work. Expertise, collaboration/proactivity and
+explanation detail are independent. Quality requires task-specific evals. "Worker"
+is informal language for a Task Agent session, never an additional Principal persona.
+Persistent proactive work needs an explicitly owned runtime and triggers; instructions
+alone do not create background execution. Existing scheduler/lifecycle capabilities
+must be used with revocation and cancellation, not a new always-on profile service.
+
+Marketplace is primarily comparison and selection; personalization uses the same
+Machine-local settings/generation path. [Measurement](docs/profile-evidence.md) keeps
+controlled benchmarks separate from optional field evidence. [Hosted assistance](docs/hosted-assistance.md)
+defines advice, draft execution and publication without a second Organization authority.
+Neither future capability exists in the proof. Commercial strategy stays with its owning
+Organization; this public source contains the complete generic technical boundaries.
