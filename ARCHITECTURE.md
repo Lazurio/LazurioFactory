@@ -236,3 +236,16 @@ controlled benchmarks separate from optional field evidence. [Hosted assistance]
 defines advice, draft execution and publication without a second Organization authority.
 Neither future capability exists in the proof. Commercial strategy stays with its owning
 Organization; this public source contains the complete generic technical boundaries.
+
+## Maker's first use
+
+Accepted entry journey: obtain the small CLI utility, select a community-tested
+profile, create a Managed Root and use an existing Codex or Claude Code installation
+with the maker's own model access. First value is transferring a versioned working
+method/persona into an agent already in use. An Organization, hosted environment or
+platform credits are not prerequisites. Empty Organization discovery is a valid
+initial state, not an onboarding failure. The CLI profile selection and generation
+use the same settings owner; a full marketplace backend is not needed for this path.
+Exact packaging and profile acquisition UI remain proposals. A profile transfers
+instructions, not proven competence or identical capabilities across harnesses.
+Codex and Claude Code are the initial supported consumers; others are future extensions.

@@ -119,3 +119,13 @@ Profile evidence design starts with the profile capability. No telemetry service
 marketplace billing or hosted runner is a prerequisite to the first local installed
 consumer. Their future launch gates remain explicit in the corresponding contracts;
 no documented acceptance scenario is represented as already executed here.
+
+## Maker onboarding acceptance
+
+From the official CLI, select a pinned community profile, create a new Managed Root
+and perform a bounded task in an existing Codex or Claude Code using the maker's own
+model access. Prove initial instruction/skill adoption and visible missing capabilities.
+The fixture has no Organization and no hosting account or platform credits; empty
+discovery must not block first use. Later Organization onboarding is a distinct journey.
+Profile selection is evidence-informed, not a competence guarantee or a promise of
+support for every harness. This does not relax the full first-transition native gate.
