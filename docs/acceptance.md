@@ -12,7 +12,7 @@ the other slices are complete.
 | --- | --- | --- |
 | 0 — Foundation review | Product intent and repository routing | Public architecture, explicit decision amendments, stack comparison, working standalone proof, independent review |
 | 1 — Distribution | Accepted stack and release trust/layout decisions | Clean machine runs full installed CLI + Launchpad without source; signed/tampered/offline artifact cases and artifact secret scan |
-| 2 — Environment generation | Slice 1 and ownership/schema contract | Fresh dedicated human environment produces only owned environment-directory files through Launchpad, starts full app; unknown/edited paths preserved; rollback drill |
+| 2 — Environment generation | Slice 1 and ownership/schema contract | Folder Factory produces only owned Lazurio Folder files through the shared CLI/Launchpad core; Launchpad applies locally, starts full app; unknown/edited paths preserved; rollback drill |
 | 3 — Profile capability | Slice 2 and accepted behavior schema | CLI and Launchpad use the same profile use case; deterministic generation, stale revision refusal, session pin/restart and upgrade preservation |
 | 4 — Environment purposes | Slices 2–3 and hosting amendment | Dedicated human/Buddy/AI Colleague acceptance with correct Principal, Owner, custody and unavailable-capability behavior |
 | 5 — Migration rehearsal | Relevant slices 1–4, legacy compatibility and restore mapping | Faithful dirty legacy source-working fixtures plus shared-workshop transition prove preservation, interrupted recovery and no-op unknown state |
@@ -25,15 +25,16 @@ cohorts must pass their preservation/recovery gate; hosted cohorts additionally 
 hosting amendment and envelope proof. Broad support/retirement claims require every
 claimed cohort's evidence. The three-OS/two-harness first-transition gate stays binding.
 
-Do not silently fold ongoing legacy maintenance into a new Factory rewrite. Existing
+Do not silently fold ongoing legacy maintenance into a new Platform rewrite. Existing
 fixes continue with their owners; selectively port proven contracts with provenance.
 
 ## Required scenarios
 
 | Area | Positive proof | Negative / failure proof |
 | --- | --- | --- |
-| Installation | CLI and real Launchpad run from installed artifact in a fresh home without Factory/Bun source tools; Factory is absent from the target Machine | Missing dependency, bad signature/digest/platform, hostile archive, occupied environment directory: no partial activation |
-| Factory / Launchpad boundary | Factory builds a release; installed Launchpad locally applies a Machine-owned configuration change | Factory checkout/source on the target, remote Factory mutation of a Machine, or a second local writer fails the boundary review |
+| Installation | CLI, Folder Factory and real Launchpad run from an installed artifact in a fresh home without a Platform source checkout or Bun development tools | Missing dependency, bad signature/digest/platform, hostile archive, occupied Lazurio Folder: no partial activation |
+| Source / Folder Factory / Launchpad boundary | Platform source builds a release; Folder Factory plans and generates owned output; installed Launchpad locally applies the change | Active source checkout, remote source mutation of a Machine, or a second local writer fails the boundary review |
+| Managed-service independence | Self-hosted Platform forms a working Environment without HumanAndMachinePlatform, Account/Auth or Dashboard | Private service unavailability blocks local CLI, Launchpad or Folder generation |
 | Conglomerate projection | Whole-system view resolves Organization access from GitHub and Machine facts from their local owners, with freshness/unknown state visible | View grants access, becomes a parallel truth, crosses Personalspace/credentials/private content, or treats the fleet as a shared directory/Organization |
 | Shared core | CLI and UI produce equivalent validated operation plans and reason codes | UI cannot bypass validation/authority; unknown fields/enums/schema rejected |
 | Profile | Two Machines of one Principal retain different profiles; local change does not sync; detail changes independently from delegation and locale; deterministic digest; upgrade retains selection | Manual output drift, stale revision, unsupported purpose/locale, concurrent mutation, missing harness capability |

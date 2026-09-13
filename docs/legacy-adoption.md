@@ -8,7 +8,7 @@ current owners until each replacement is qualified.
 
 The first real installed-product consumer is **discover a permitted module, start
 its declared application, observe status and stop its managed process tree** without
-a Factory checkout. Test the same path through CLI and Launchpad, including denied
+a Platform checkout. Test the same path through CLI and Launchpad, including denied
 access, invalid manifest, busy port and failed start. The profile preview experiment
 does not satisfy this consumer.
 
@@ -41,7 +41,7 @@ an explicit operation with its own authority, preview and recovery conditions.
 | Artifact/profile/manifest compatibility | Adapt to installed state | Detect exact installed version, output drift and unsupported schema without writes |
 | Provider identity/access | Reuse verified provider semantics | Explicit online readiness reports fresh identity/grants; offline check never fabricates them |
 | Repository and worktree preservation | Retain relevant probes | No fetch/reset/stash in read-only Doctor; repair is separately scoped |
-| Source checkout / development toolchain | Move to explicit development gate | Daily user not blocked by absent Factory, formatter, test runner or source Git branch |
+| Source checkout / development toolchain | Move to explicit development gate | Daily user not blocked by absent Platform, formatter, test runner or source Git branch |
 | Process/port/readiness | Adapt through lifecycle owner's read interface | One process/locator truth, precise unavailable/error result |
 | Obsolete duplicate probes | Remove after mapped replacement tests | No parallel Doctor policy table or duplicate mutable readiness store |
 

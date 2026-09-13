@@ -61,7 +61,9 @@ billable work already performed when interrupted. Prices, credit units, reserve/
 provider, refund rules and retry guarantees need a reviewed contract before launch.
 Recommend the smallest standard provider capabilities; a general workflow engine or
 second repository registry is not required. A licensing/hosting agreement must cover
-the service; Factory's license does not grant arbitrary third-party managed hosting.
+the service; Platform's ELv2 terms do not grant arbitrary third-party managed hosting.
+Human and Machine s.r.o. may grant that right to an approved partner under a separately
+negotiated commercial license.
 
 ## Failure and acceptance
 

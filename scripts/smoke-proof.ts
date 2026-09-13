@@ -4,13 +4,13 @@ import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 
 // Only a newly created temporary fixture is written; no installed roots are discovered.
-const temporary = await mkdtemp(join(tmpdir(), "factory-proof-"));
+const temporary = await mkdtemp(join(tmpdir(), "platform-proof-"));
 const binary = join(
   temporary,
   process.platform === "win32" ? "proof.exe" : "proof",
 );
 const source = resolve(
-  `dist/factory-proof${process.platform === "win32" ? ".exe" : ""}`,
+  `dist/platform-proof${process.platform === "win32" ? ".exe" : ""}`,
 );
 const args = [
   "--purpose",
@@ -60,7 +60,7 @@ try {
       expected,
     );
     const html = await (await fetch(url)).text();
-    assert(html.includes("Factory proof"));
+    assert(html.includes("Platform proof"));
     const script = html.match(/src="([^"]+\.js)"/);
     assert(script?.[1], "embedded compiled UI script present");
     const js = await fetch(new URL(script[1], url));

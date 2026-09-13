@@ -1,4 +1,4 @@
-# Lazurio Environment Factory architecture
+# Lazurio Platform architecture
 
 Status: proposed implementation contract, updated 2026-09-13. Product direction is supplied
 by the Principal; this document does not claim that the target is deployed. Decision
@@ -9,16 +9,17 @@ amendments and rollout gates are in [decisions](docs/decisions.md).
 Provide a stable, maintainable product for hundreds of people building their own
 Organizations, on local or hosted environments, including Buddy and AI Colleagues.
 Removing architectural debt is the purpose; converting JavaScript syntax alone is
-insufficient. Lazurio Environment Factory (**Factory** for short) is the chosen public
-development, build and distribution source. Factory produces Lazurio releases; it is
-never installed on target Machines and never applies Machine changes. Architecture,
+insufficient. **Lazurio Platform** is the chosen public source-available product and
+codebase. Its reviewed source produces Lazurio releases; a source checkout is never the
+installed product and does not remotely apply Machine changes. Architecture,
 implementation and verification are transparent;
 private data and credentials remain in their existing custody boundaries.
 
-1. A normal installation and upgrade operate without any Factory checkout. Installed
-   Lazurio contains Launchpad; Launchpad applies configuration and desired changes locally
-   on its Machine.
-2. A generated non-Git environment directory owns only enumerated instructions/configuration.
+1. A normal installation and upgrade operate without any Platform source checkout.
+   Installed Lazurio contains CLI, Launchpad and Lazurio Folder Factory. CLI and Launchpad
+   invoke the same core; Launchpad applies configuration and desired changes locally.
+2. Lazurio Folder Factory plans, generates and reconciles only enumerated Lazurio-owned
+   instructions/configuration in a non-Git Lazurio Folder.
    Organization repos, Personalspace, Git state and runtime data are never generator inputs to overwrite.
 3. Every operation identifies the actual Principal, Machine Owner and higher host/operator boundary.
    Owner-local work uses the existing Machine/filesystem boundary; GitHub remains
@@ -35,9 +36,9 @@ account/billing services, choose commercial terms or create a release mandate.
 
 ## Current state versus target
 
-| Concern | Existing evidence | Factory target |
+| Concern | Existing evidence | Platform target |
 | --- | --- | --- |
-| Environment directory | Supported source checkout also acts as the working directory | Installed product outside a thin generated non-Git Lazurio directory |
+| Lazurio Folder | Supported source checkout also acts as the working directory | Installed product outside a thin generated non-Git Lazurio Folder |
 | Distribution | Legacy npm gate explicitly expects package-only Launchpad unavailable | Full CLI and Launchpad work from installed artifacts, with source absent |
 | Runtime | Existing CLI/core boundaries and extensive preservation fixtures are useful evidence | Port proven invariants into small owner-focused TypeScript modules |
 | Hosted work | Shared Hosted Team Workspace is current documented model | Environment dedicated to one Principal, with higher provider boundary stated |
@@ -61,8 +62,10 @@ Launchpad HTTP/API adapter ──┼── application use cases ── platform
                              │          │
 browser UI ── typed API ─────┘          └── pure contracts/profile renderer
 
-Factory source → versioned build → installed Lazurio → Launchpad → local environment changes
-                                                └── user preferences (input)
+Platform source → versioned build → installed Lazurio ─┬─ CLI
+                                                       ├─ Launchpad → local application
+                                                       └─ Folder Factory → Lazurio Folder
+                                                                            └─ selected profile (input)
 Organization/Personalspace repos ← their own Git/data owners; never build output
 ```
 
@@ -76,24 +79,25 @@ installed executable, not a separate implementation of installation/profile logi
 
 | Fact / capability | Canonical owner | Consumer and lifecycle |
 | --- | --- | --- |
-| Source, profile templates, skills, default rules | Factory reviewed source | Build produces immutable release artifacts; no runtime edits to source |
+| Source, profile templates, skills, default rules | Reviewed Lazurio Platform source | Build produces immutable release artifacts; no runtime edits to source |
 | Installed executable and assets | Product installer/updater | Versioned OS-standard user installation location, manifest and retained rollback version |
 | Chosen collaboration profile, locale, detail preference | Machine-local versioned settings selected by its Principal | Profile use case validates then generates instructions; upgrade preserves preference |
-| Generated paths and digests | Installed generation manifest | Launchpad compares expected prior digests before replacing only listed owned paths |
-| Organization identity, repo and app declarations | Organization manifests | Discovery and lifecycle consume them; Factory never creates a second allowlist |
+| Lazurio Folder generation and expected digests | Lazurio Folder Factory and its installed generation manifest | Launchpad invokes the shared plan locally and replaces only listed owned paths |
+| Organization identity, repo and app declarations | Organization manifests | Discovery and lifecycle consume them; Platform source never creates a second allowlist |
 | Git access, membership, publication permission | GitHub | Live checks for online mutations; offline state is not fresh authority |
 | Running app processes | Existing lifecycle owner, adapted once | One process tree and one state locator, bounded to the actual environment |
 | Secrets and provider recovery | Existing credential/provider custody | Reference/operation proof only; no secret material in manifests or logs |
 | Planning and delivery status | Owning Organization Mission Control | Links to code and knowledge; no product-local task ledger |
 
 Installed executable location uses OS-standard per-user data/install conventions;
-the target Lazurio directory remains `<home>/Lazurio`. The release activation mechanism
+the target Lazurio Folder remains `<home>/Lazurio`. The release activation mechanism
 must work on native Windows without assuming executable overwrite or POSIX symlinks.
 Detailed physical layout is an installer-slice decision, constrained by these owners.
 
-Factory developers use a separate source checkout, e.g. an Organization's
-`productionspace/LazurioFactory`. This physical repo/path identity is unchanged by the
-product-name clarification. Existing `development/Lazurio` legacy-source
+Platform developers use a separate source checkout, currently mounted as an Organization's
+`productionspace/LazurioFactory`. The accepted target repository name is
+`Lazurio/LazurioPlatform`; the physical GitHub/path rename is not performed by this
+architecture draft. Existing `development/Lazurio` legacy-source
 coordinates remain migration provenance; changing a directory name does not select
 a runtime. Legacy `development/Lazurio` is not part of the target standard Lazurio
 Environment.
@@ -101,15 +105,15 @@ Retire an existing checkout only through the dependency/ref/worktree/dirty-work
 inventory and restore gates in the migration contract; nothing is removed now.
 Isolated worktree testing and explicit integrated-candidate Machine activation are
 different accepted workflows, defined in [release lifecycle](docs/release-cycle.md).
-Program selection and environment-directory selection are independent; source edits
+Program selection and Lazurio Folder selection are independent; source edits
 are never live.
 
 ## Confirmed system topology
 
-A **Lazurio Environment** is the resulting local working environment on one Machine.
-Its physical location is called the **Lazurio directory** or **environment directory**;
-`Managed Root` and `Lazurio Root` are not user-facing names because `root` is ambiguous
-on Linux. Machines share a versioned environment contract and conventions/interfaces.
+A **Lazurio Environment** is one Machine's operational composition of compatible
+installed Lazurio components and its correctly materialized **Lazurio Folder**.
+`Managed Root` and `Lazurio Root` are historical aliases, not current user-facing names, because `root`
+is ambiguous on Linux. Machines share a versioned environment contract and conventions/interfaces.
 They do not share one live directory and are not required to hold identical state.
 
 The **Conglomerate** is the end-state fleet/graph of Machines and their Lazurio
@@ -134,6 +138,28 @@ discovery/projection/freshness, future write-through, privacy/observability, the
 repository rename and the legacy terminology migration. No implementation mechanism for
 those choices is selected here.
 
+## Public platform and private managed services
+
+The public Lazurio Platform must remain independently installable and self-hostable for
+personal and internal Organization use. It does not require Lazurio Account, Dashboard
+or Human and Machine hosting to form a working Lazurio Environment.
+An external implementer may help a customer deploy Lazurio for that customer's own
+internal use; that implementation work alone is not a competing managed Lazurio service.
+
+`HumanAndMachinePlatform` is the proposed private integration repository owned by Human
+and Machine s.r.o. It may pin the public Lazurio Platform together with private Lazurio
+Account/Auth, Lazurio Dashboard and managed-hosting components for authorized company
+collaborators. It is a development, test and service-delivery composition, not a runtime
+authority or second source of Platform code. Component changes remain in their owning
+repositories.
+
+The public Platform is source-available under Elastic License 2.0. Personal and internal
+company self-hosting remain allowed under that license. A third party offering customers
+a hosted or managed service exposing a substantial set of Lazurio functionality requires
+a separate commercial agreement from Human and Machine s.r.o.; approved partners may
+receive such terms. Exact partner contracts, pricing and service implementation remain
+open and outside this public architecture.
+
 ## Environment composition
 
 | Axis | Meaning | Does not mean |
@@ -143,7 +169,7 @@ those choices is selected here.
 | Expertise | Domain methods and task competence, e.g. senior marketing specialist | Proven quality from a senior label |
 | Collaboration / proactivity | Responsive drafts or proactive coordination within mandate | A persistent runtime, automatic access, merge or release authority |
 | Explanation detail | Concise outcome versus implementation detail | Different approval authority |
-| Locale | Versioned root-owned instruction language and UI language | Translation or modification of Organization-owned content |
+| Locale | Versioned Lazurio Folder-owned instruction language and UI language | Translation or modification of Organization-owned content |
 
 Validate supported combinations from the release manifest. Unknown combinations
 fail before mutation. Keep legacy machine enums as migration input, not guessed

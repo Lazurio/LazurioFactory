@@ -1,21 +1,25 @@
 # Decision proposals and convergence
 
-Status: review draft, updated 2026-09-13. These local identifiers are Factory proposals,
+Status: review draft, updated 2026-09-13. These local identifiers are Platform proposals,
 not new numbers in the maintained Lazurio decision register. They do not override
 legacy runtime contracts until the owning decision is amended and consumers migrate.
 
 ## F0 — Confirmed vocabulary and responsibility split
 
-**Direction confirmed by the Principal:** the product concept is **Lazurio Environment
-Factory**, with **Factory** as its short name. The existing repository, path, package and
-slug identities are unchanged. Factory is public development/build/distribution source,
-is never installed on target Machines and produces Lazurio releases. Installed Lazurio
-contains Launchpad; Launchpad applies configuration and desired changes locally on each
-Machine. Factory never applies Machine changes.
+**Direction confirmed by the Principal:** the product is **Lazurio Platform**. Its public,
+source-available codebase is intended to become `Lazurio/LazurioPlatform`; the current
+`Lazurio/LazurioFactory` repository/path remains unchanged until a separate physical rename.
+The source produces installed releases and is not itself a daily Machine checkout.
 
-The resulting local working environment is a **Lazurio Environment**. Its physical
-location is a **Lazurio directory** or **environment directory**. Do not introduce
-`Managed Root` or `Lazurio Root` as user-facing proper nouns.
+An installed release contains CLI, Launchpad and **Lazurio Folder Factory**. Folder Factory
+is the shared component that plans, generates and reconciles Lazurio-owned paths from a
+selected profile. CLI and Launchpad use the same core; Launchpad is the local application
+boundary and no remote source repository mutates a Machine.
+
+The resulting composition of compatible installed components and a correctly materialized
+**Lazurio Folder** on one Machine is a **Lazurio Environment**. Treat `Managed Root`
+and `Lazurio Root` only as historical aliases; do not introduce them as current
+user-facing proper nouns.
 
 **Conglomerate** is the end-state fleet/graph of Machines and Lazurio Environments across
 Organizations, with meaningful relationships and flows of data, information and work.
@@ -35,10 +39,13 @@ minimal retained model is an owner-backed projection/view. Whether even a non-au
 central registry exists remains open because of the current no-central-registry and
 no-global-sync rule; no mechanism is selected in this draft.
 
-## F1 — New Factory and installed product
+## F1 — Public Platform codebase and Folder Factory
 
-**Direction accepted in the request:** new TypeScript development repository, thin
-non-Git environment directory, local and hosted work plus Buddy and AI Colleagues.
+**Direction accepted in the request:** a public TypeScript Platform repository containing
+CLI, Launchpad, Lazurio Folder Factory and shared contracts. Folder Factory owns only the
+generation/reconciliation capability; it is not the whole product or a Machine-level
+authority. Local and hosted environments, Buddy and AI Colleagues consume installed
+Platform releases.
 **Implementation proposal, not yet approved:** one Bun/TypeScript product, native
 CLI and HTTP adapter, shared core, standalone distribution as the first supported
 consumer channel. React/Vite for the real Launchpad remains under consideration;
@@ -80,10 +87,10 @@ or explicitly resolved before the dedicated cohort's acceptance.
 **Direction accepted:** coordinator behavior, configurable technical detail and
 publication mandate are distinct. **Accepted ownership:** per-Machine profile, independently selectable for the same
 Principal on different Machines. No automatic sync or global override engine.
-**Proposed implementation:** versioned machine-local
-preferences and deterministic root-owned generation through one CLI/core capability.
+**Proposed implementation:** versioned machine-local preferences and deterministic
+Folder-owned generation through one Folder Factory capability shared by CLI and Launchpad.
 
-Editing generated instructions creates a second truth; editing Factory source for
+Editing generated instructions creates a second truth; editing Platform source for
 every user creates personal product forks. Both are rejected. A generic plugin/profile
 DSL is unnecessary. Predefined templates and preserved machine-local custom sources
 are both accepted: free-form working instructions and proposed mandates are supported
@@ -99,12 +106,12 @@ have different transactions and compatibility checks. See [recovery](migration-a
 | Existing authority | Proposed precise change | Preserved invariant / retirement evidence |
 | --- | --- | --- |
 | Decision 0128 and existing `Conglomerate Host` terminology | Deprecation of the old Conglomerate root/product name remains in force; separately decide whether and how `Conglomerate` can become the fleet/graph term without colliding with the existing Machine profile | No silent canonical rewrite; explicit legacy terminology and consumer migration |
-| Decisions 0136 and resident-distribution knowledge | Factory source is optional development input; installed product owns runtime; preserve the canonical Lazurio directory path | Legacy source-working directory supported until explicit migration and restore proof; no second active environment directory |
+| Decisions 0136 and resident-distribution knowledge | Platform source is optional development input; installed product owns runtime; Folder Factory preserves the canonical Lazurio Folder path | Legacy source-working directory supported until explicit migration and restore proof; no second active Lazurio Folder |
 | Decision 0137 and hosted Machine contract proposals | Replace shared Team workshop execution with a dedicated environment per Principal; manifest-derived eligibility remains | Existing shared environments retained only for bounded transition; stop new shared cohorts after approved cutoff |
 | Decisions 0091, 0092, 0094 and Machine architecture | Clarify dedicated use versus infrastructure ownership and custodian recovery | Personalspace remains private, Buddy not Principal, AI Colleague own identity, parent operator boundary explicit |
 | Decision 0129 | In Managed installations product upgrade uses artifacts, Organization Git synchronization keeps its own existing semantics | No product updater scanning/rewriting repositories; Source update retired by cohort |
 | Decisions 0134, 0140 | Installed executable carries its runtime; development/module toolchain checks remain capability-specific | No automatic machine-wide PATH/tool upgrades; packaging does not claim third-party app dependencies bundled |
-| Decision 0142 | Environment-directory generation composes purpose, behavior and locale from versioned inputs | Organization language ownership and stable locale-neutral reason codes preserved |
+| Decision 0142 | Lazurio Folder Factory composes purpose, behavior and locale from versioned inputs | Organization language ownership and stable locale-neutral reason codes preserved |
 | Collaboration constitution / 0132 | Define coordinator acceptance with real harness capability and independent verification | Principal retains scope, access and publication authority |
 
 Canonical amendments belong with the existing maintained decision owners. This
@@ -119,8 +126,9 @@ and migration of legacy terminology. None is an implied implementation task.
 
 ## Provenance and publication
 
-`Lazurio/LazurioFactory` is a new public repository, not a transfer or rename of
-`HumanAndMachines/Lazurio`. Creating the repository does not change legacy package
+`Lazurio/LazurioFactory` is the current public repository and the accepted target name is
+`Lazurio/LazurioPlatform`; this draft does not perform that provider mutation. It is not
+a transfer or rename of `HumanAndMachines/Lazurio`. Creating or renaming the repository does not change legacy package
 coordinates, Git remotes, signing identities, releases, version history or IP rights.
 
 Public-first development was explicitly requested after repository creation. The
@@ -130,9 +138,9 @@ only the short repository README. No legacy core or private content was publishe
 Before legacy code reuse/product release, the authorized owner must settle license and IP
 provenance, preserving notices and exact source refs. Decide the final public source
 URL and legacy redirect policy, artifact/package names and trusted signing identity.
-Keep an auditable mapping `legacy source/ref → reviewed reused component → Factory ref`.
+Keep an auditable mapping `legacy source/ref → reviewed reused component → Platform ref`.
 Do not copy private planning, provider operations or customer context into public docs.
-The Principal selected [Elastic License 2.0](licensing.md) for newly owned Factory
+The Principal selected [Elastic License 2.0](licensing.md) for newly owned Platform
 code, documentation, runtime and embedded templates. User content and marketplace
 submissions retain their own rights; dependencies retain original terms/notices.
 No legacy FSL source is relicensed and no automatic Apache transition applies.
@@ -155,7 +163,7 @@ semantics, trust mechanism and automatic update detection remain implementation 
 | --- | --- | --- |
 | Decision amendment acceptance | Product Principal and maintained decision owner | Reviewed canonical amendments, explicit migration scope |
 | License/IP and product release | Authorized repository/IP owner | Reused-source inventory, license disposition, explicit product-release instruction; repository visibility is already public by request |
-| Native supported platform floor | Factory maintainer | Native OS/CPU/ABI tests; build success alone insufficient |
+| Native supported platform floor | Lazurio Platform maintainer | Native OS/CPU/ABI tests; build success alone insufficient |
 | Hosting envelope and shared-workshop cutoff | Infrastructure owner | Dedicated isolation and identity smoke, recovery and decommission plan |
 | Release signing and recovery | Distribution owner | Verified candidate, tamper denial, key rotation drill and offline restore |
 | Coordinator capability | Harness integration owner | Actual delegated and unavailable-tool scenarios, not generated text assertions |
@@ -194,13 +202,33 @@ new recommendation identity graph, configuration engine or telemetry platform.
 Accepted module consumer: an immutable authored release is deliberately integrated
 as a tested draft into a customer's own Organization; later updates preserve local
 changes through another integration. Licensing/entitlement/support/visibility terms
-are independent open decisions, not consequences of Factory's ELv2.
+are independent open decisions, not consequences of Lazurio Platform's ELv2.
 
 Accepted hosted-assistance outcome: scoped advice and preparation of customer-owned
 repo drafts can run without a local developer toolchain. Credit budget is not access
 or publication authority. The provider isolation, credential delegation, charging and
 lifecycle mechanisms require their actual consumer and failure evidence before launch.
 No implementation, account service, billing or live migration is authorized here.
+
+## Managed-service and private-integration boundary
+
+**Direction confirmed by the Principal:** the public Lazurio Platform is source-available
+under Elastic License 2.0 and remains self-hostable for personal and internal commercial
+Organization use. Human and Machine s.r.o. reserves customer-facing hosted/managed service
+delivery, with separately contracted partners as the explicit exception.
+External implementers may deploy Lazurio for a customer's own internal use without that
+implementation alone becoming the reserved customer-facing managed service.
+
+`HumanAndMachinePlatform` is a proposed private integration repository. It composes the
+public Lazurio Platform with private Lazurio Account/Auth, Lazurio Dashboard and managed
+Machine-hosting components. Those services are optional for self-hosted Lazurio and do
+not become access authority for Organization repositories merely by being integrated.
+Exact repository layout, partner agreements, prices and hosting mechanisms remain open.
+
+The licensing model is Elastic-2.0 for public Platform code plus a separately negotiated
+commercial license for approved service providers. This is source-available, not OSI
+open source. Human and Machine s.r.o. is the named licensor; accepting outside contributions
+or relicensing additionally requires verified inbound rights.
 
 ## Discussion gap audit and implementation routing
 

@@ -1,7 +1,7 @@
-# Lazurio Environment Factory: implementation contract
+# Lazurio Platform: implementation contract
 
-This repository develops and distributes Lazurio. Factory is its short name. It is not
-installed on a target Machine and is not an installed user's Lazurio Environment.
+This repository develops and distributes Lazurio Platform. A source checkout is not an
+installed user's Lazurio Environment and must not be treated as the active installation.
 
 Public-first is a project invariant. Keep source, architectural rationale, proposed
 decisions, tests, reproducible build steps and safe evidence publicly reviewable.
@@ -33,9 +33,10 @@ deployment inventory and planning ledgers do not belong in this product reposito
 Do not import legacy source wholesale: preserve license and provenance for every
 deliberately reused component, and port only behavior justified by a consumer.
 
-The proof has no install/update/profile-write/migrate command. Factory never applies
-Machine changes; installed Launchpad owns local application of configuration and desired
-changes. Do not quietly turn
+The proof has no install/update/profile-write/migrate command. Lazurio Folder Factory is
+the shared planning/generation/reconciliation component used by CLI and Launchpad;
+installed Launchpad owns local application of configuration and desired changes. A source
+checkout never applies them remotely. Do not quietly turn
 it into one. Implement each subsequent slice only after its recorded acceptance and
 decision prerequisites are satisfied. Test behavior and failure recovery, not source
 text shape or arbitrary file-size limits. Compiling for an OS is not testing on it.

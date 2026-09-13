@@ -1,6 +1,6 @@
 # Public development and secret custody
 
-Lazurio Environment Factory (Factory) is developed publicly from the foundation. Implementation, architectural
+Lazurio Platform (Platform) is developed publicly from the foundation. Implementation, architectural
 decisions (including rejected alternatives), tests, build procedures and sanitized
 failure evidence should be understandable without a private chat or document.
 Private planning may schedule this work but must not become a hidden technical
@@ -9,7 +9,7 @@ dependency required to use or review the public product.
 Publish names, formats and safe examples of configuration, not their secret values.
 Use obvious placeholders such as `<provided-by-owner>`; avoid realistic example
 tokens. Credential access remains with existing OS/provider/harness custody.
-Factory stores neither a new secret database nor copies of session credentials.
+Platform stores neither a new secret database nor copies of session credentials.
 
 Never include personal files, another Organization's data, customer examples,
 private environment values, keys, cookies, tokens or raw operational logs in source,
@@ -23,6 +23,11 @@ checking source alone does not catch copied `.env` or debug bundles. A secret sc
 is additional evidence, not a substitute for input ownership and content review.
 Private Knowledgebase and Mission Control remain private and are never included by
 recursive source packaging.
+
+Private Lazurio Account/Auth, Dashboard and managed-hosting repositories are likewise
+not submodules or build dependencies of this public repository. Authorized company
+collaborators compose them through the private `HumanAndMachinePlatform` integration;
+public users receive a complete self-hostable Platform without inaccessible placeholders.
 
 The distribution slice must install a maintained secret scanner in CI, pinned to an
 immutable version/commit, scanning PR changes and release inputs without printing

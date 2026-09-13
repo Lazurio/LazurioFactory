@@ -16,7 +16,7 @@ and module licenses remain separate decisions.
 
 The active profile remains per Machine. A future marketplace distributes versioned
 profile definitions which a Principal deliberately selects for a particular local
-installation. Installing a definition is not importing another person's environment directory,
+installation. Installing a definition is not importing another person's Lazurio Folder,
 credentials, Organization data, Personalspace or authority. It must not update the
 same person's other Machines implicitly.
 
@@ -71,7 +71,7 @@ One synthetic producer publishes a declarative definition; two Machine fixtures 
 the same Principal activate different pinned profiles without sync. Unknown schema,
 unavailable capability, wrong compatibility and tampered definition fail before
 activation. A new version produces an explicit diff and does not expand authority.
-The test includes attempted secret/environment-directory/data import and attempted install script.
+The test includes attempted secret/Lazurio Folder/data import and attempted install script.
 It proves refusal without executing the content. Service launch and public profile
 publication retain their own explicit mandates.
 
@@ -99,7 +99,7 @@ An author may offer a module repository release or immutable source snapshot. Pu
 visibility of all paid repositories is not decided. The transaction identifies the
 exact version/digest, source provenance and applicable module license. Payment or a
 dashboard receipt does not itself protect source, prove code quality, grant Git access,
-install the module or authorize publication. Factory ELv2 does not choose its license.
+install the module or authorize publication. Platform ELv2 does not choose its license.
 
 The consumer explicitly selects a customer Organization. With the applicable source
 entitlement and live repository rights, its agent verifies the snapshot, dependencies,

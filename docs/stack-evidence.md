@@ -4,7 +4,7 @@ Status: unaccepted implementation recommendation for review, not a released prod
 
 ## Decision and alternatives
 
-Use TypeScript in strict mode, exact Bun 1.4.2 for development/build, a pure core shared by CLI and HTTP adapters, and one standalone executable containing the application and static UI assets as the preferred initial end-user distribution. Keep Factory optional for developers. The pure core owns profile parsing/rendering; CLI parsing and HTTP transport do not implement another profile truth. Purpose, communication detail and coordination preferences compose independently; publication permission is never derived from them.
+Use TypeScript in strict mode, exact Bun 1.4.2 for development/build, a pure Folder Factory core shared by CLI and HTTP adapters, and one standalone executable containing the application and static UI assets as the preferred initial end-user distribution. Keep the Platform source checkout optional for end users. The pure core owns profile parsing/rendering; CLI parsing and HTTP transport do not implement another profile truth. Purpose, communication detail and coordination preferences compose independently; publication permission is never derived from them.
 
 This is a recommendation based on the narrow consumer below. Production adoption remains contingent on native platform acceptance, release verification and recovery work described in the architecture and plan.
 
@@ -61,7 +61,7 @@ All unexecuted rows remain acceptance work. CPU/OS availability does not establi
 ## Independent counterweight and missing invariants
 
 1. Do not introduce a workspace monorepo, service framework, plugin system, database, dependency injection layer or profile registry just to structure three small adapters. The current proof needs none of them. Decompose only when actual ownership/import boundaries justify it.
-2. The proof has no stored profile truth, revision, update authority, filesystem ownership inventory or migration journal. The real implementation must establish one canonical owner for each, and test interrupted activation and recovery before any managed-root writes.
+2. The proof has no stored profile truth, revision, update authority, filesystem ownership inventory or migration journal. The real implementation must establish one canonical owner for each, and test interrupted activation and recovery before any Lazurio Folder writes.
 3. Loopback binding is exposure minimization, not authentication. No private state is exposed here. A real UI needs its own authenticated session, Origin/Host checks, CSRF protection for writes and capability checks before becoming an authority to mutate data.
 4. Bun's standalone runtime can load `.env` and `bunfig.toml` by default. This build disables both autoload paths explicitly. The runtime also exposes `BUN_BE_BUN` and accepts `BUN_OPTIONS`; a compiled artifact does not prevent arbitrary execution or self-modification under the same OS identity. Real enforcement must sit in a separately owned OS/harness boundary. [Bun runtime configuration](https://bun.sh/docs/bundler/executables#automatic-config-loading).
 5. The tiny renderer proves deterministic computation and shared consumption, not coordinator competence, delegation availability or obeyed instructions. Those require actual harness scenarios with failure, review and publication boundaries.

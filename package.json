@@ -1,5 +1,5 @@
 {
-  "name": "lazurio-factory-foundation",
+  "name": "lazurio-platform-foundation",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +7,7 @@
   "scripts": {
     "check": "bun run lint && bun run typecheck && bun test && bun run check:public && bun run build:proof && bun run smoke:proof",
     "test": "bun test",
-    "build:proof": "bun build proof/main.ts --compile --no-compile-autoload-dotenv --no-compile-autoload-bunfig --outfile dist/factory-proof",
+    "build:proof": "bun build proof/main.ts --compile --no-compile-autoload-dotenv --no-compile-autoload-bunfig --outfile dist/platform-proof",
     "smoke:proof": "bun run scripts/smoke-proof.ts",
     "lint": "biome check --error-on-warnings .",
     "format": "biome check --write .",

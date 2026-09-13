@@ -1,15 +1,21 @@
-# Lazurio Environment Factory
+# Lazurio Platform
 
-Lazurio Environment Factory (**Factory** for short) is the public TypeScript source,
-build and distribution foundation for Lazurio. Factory produces Lazurio releases; it
-is never installed on target Machines and never applies changes to them. People install
-a Lazurio release, which contains Launchpad, and do not clone this repository for daily
-work.
+**Lazurio Platform** is the public, source-available TypeScript product and codebase.
+Its reviewed source produces versioned Lazurio releases; people install those releases
+and do not clone the source repository for daily work.
 
-Launchpad applies configuration and desired changes locally on each Machine. The result
-is that Machine's **Lazurio Environment**; its physical location is the **Lazurio
-directory** or **environment directory**. Machines share a versioned environment
-contract and conventions/interfaces, not a live shared directory or identical state.
+An installed release contains CLI, Launchpad and the **Lazurio Folder Factory**. Folder
+Factory is the shared component that plans, generates and reconciles Lazurio-owned paths
+in the **Lazurio Folder** from a selected profile. CLI and Launchpad use the same core;
+Launchpad remains the local application boundary on the Machine. The compatible installed
+components together with the materialized Lazurio Folder form that Machine's **Lazurio
+Environment**. Machines share a versioned environment contract and conventions/interfaces,
+not a live shared directory or identical state.
+
+Optional services operated by Human and Machine s.r.o.—Lazurio Account/Auth, Lazurio
+Dashboard and managed Machine hosting—are not required for a self-hosted Lazurio
+Environment. Their private integration belongs to `HumanAndMachinePlatform`, not this
+public codebase.
 
 **Status: architecture and implementation preparation.** The small executable proof
 tests distribution boundaries. There is no supported installer, updater, live environment

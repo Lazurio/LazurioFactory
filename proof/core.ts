@@ -38,7 +38,7 @@ export function parseProfile(input: unknown): Profile {
 export function preview(input: unknown) {
   const profile = parseProfile(input);
   return {
-    kind: "factory-proof" as const,
+    kind: "platform-proof" as const,
     profile,
     instructions: [
       "# Generated profile preview — no activation",

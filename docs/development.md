@@ -4,7 +4,7 @@ This standard is a reviewable recommendation, not an approved final product stac
 
 ## Start and navigate
 
-Read `README.md`, `ARCHITECTURE.md` and the nearest `AGENTS.md`, then `docs/stack-evidence.md` for empirical limits. `proof/core.ts` owns the pure preview operation; `proof/main.ts` owns CLI and HTTP transport; `proof/ui.ts` consumes HTTP in the browser. `tests/` checks behavior and negative cases; `scripts/` contains development-only verification. The installed product must not depend on those developer scripts or on a Factory checkout.
+Read `README.md`, `ARCHITECTURE.md` and the nearest `AGENTS.md`, then `docs/stack-evidence.md` for empirical limits. `proof/core.ts` owns the pure preview operation; `proof/main.ts` owns CLI and HTTP transport; `proof/ui.ts` consumes HTTP in the browser. `tests/` checks behavior and negative cases; `scripts/` contains development-only verification. The installed product must not depend on those developer scripts or on a Platform checkout.
 
 Follow ownership and consumers rather than arbitrary file-size limits. Keep a behavior with its state/validation owner. Extract a module when it gives a responsibility a clear home, eliminates duplicate logic or provides a useful test boundary. Avoid generic `manager`, `utils` or `service` layers with no specific invariant. A long coherent function may merit review; line count alone is not a defect and many tiny files can make navigation worse. Prefer named inputs, explicit return contracts at public seams, readable domain names and direct control flow. CLI and UI call the same operation; transport adapters must not duplicate business decisions.
 
@@ -35,7 +35,7 @@ Examples already present explain why the preview has no IO and why the smoke omi
 
 ## Tests and proposed CI acceptance
 
-Test consumer-visible behavior and meaningful rejection/recovery paths. Do not mirror implementation statements or assert source text except for a narrowly justified static policy. Pure tests cover deterministic combinations and invalid input. The binary smoke covers source-independent execution, shared CLI/HTTP output, embedded asset delivery and no working-directory writes. It does not execute the browser or exercise real managed-root mutations.
+Test consumer-visible behavior and meaningful rejection/recovery paths. Do not mirror implementation statements or assert source text except for a narrowly justified static policy. Pure tests cover deterministic combinations and invalid input. The binary smoke covers source-independent execution, shared CLI/HTTP output, embedded asset delivery and no working-directory writes. It does not execute the browser or exercise real Lazurio Folder mutations.
 
 Recommend PR CI on native macOS, Linux and Windows using the exact Bun pin and frozen lockfile; run `bun run check` on every matrix entry. Pin third-party actions to verified immutable commits, keep permissions read-only and avoid secrets in pull-request jobs. No workflow is included in this proof: native runner/action selection and provider setup require their own verified implementation. Every OS/CPU advertised as supported needs native acceptance evidence, not just successful cross-compilation or a generic OS matrix.
 

@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "lazurio-factory-foundation",
+      "name": "lazurio-platform-foundation",
       "devDependencies": {
         "@biomejs/biome": "2.5.12",
         "@types/bun": "1.4.2",

@@ -81,7 +81,7 @@ test("HTML parser rejects whitespace, unquoted and alternate asset forms", async
 });
 
 test("real Git index secret cannot be hidden by a safe unstaged replacement", async () => {
-  const fixture = await mkdtemp(join(tmpdir(), "factory-index-"));
+  const fixture = await mkdtemp(join(tmpdir(), "platform-index-"));
   const script = fileURLToPath(
     new URL("../scripts/check-public.ts", import.meta.url),
   );
