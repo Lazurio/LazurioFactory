@@ -31,6 +31,12 @@ private data and credentials remain in their existing custody boundaries.
 6. The legacy source-working directory and shared hosted workshop are explicitly
    transitional paths with retirement gates.
 
+The legacy Folder conversion is one-way and in place: retain Organization/Personalspace
+paths and functional repositories/worktrees, apply a profile from the installed release,
+and retire only identified old product content after preserving unique work. Legacy Git
+is inventory/provenance, not profile-branch delivery. Recovery proceeds forward; a runnable
+legacy-installation rollback is not required. See the migration contract for boundaries.
+
 This preparation does not rewrite legacy apps, migrate current hosts, implement
 account/billing services, choose commercial terms or create a release mandate.
 

@@ -120,7 +120,8 @@ pending activation or require an explicit maintenance window.
 ## Legacy source-working directory inventory and preservation
 
 Migration must run on each actual machine only after consent to its exact plan. The
-supported Lazurio Folder is `<home>/Lazurio`; an occupied target or ambiguous folder is a blocker.
+supported Lazurio Folder is `<home>/Lazurio`; the recognized existing legacy Folder is
+the in-place input, not an occupied-target error. A conflicting second target or ambiguous folder is a blocker.
 Do not create a second active locator, infer identity from a basename, or recursively
 copy a Lazurio Folder with nested `.git` files and claim preservation.
 
@@ -143,32 +144,63 @@ Stashing alone is not a migration backup. No clean/reset/rebase is used to make 
 inventory easier. A merge/rebase/am in progress blocks migration until its owner
 resolves it. Unknown layouts receive a no-op report and a supported repair proposal.
 
+For the one-way product conversion, this checkpoint protects recoverable history and
+unique work; it does not require keeping old product worktrees operational after conversion.
+Protected Organization and Personalspace Git/worktree functionality must remain intact.
+
 Classify old files into Folder Factory-derived, user-owned and unknown using an exact old
 release/source manifest plus reviewed mapping. Unknown files remain preserved; they
 are not guessed to be obsolete. Do not treat all ignored files as disposable caches.
 Before relocating any linked worktree use supported Git relocation/repair with
 proof on a faithful fixture; never rewrite arbitrary `.git` pointer text blindly.
 
-## Legacy source-working → Lazurio Environment phases and reversal points
+## Confirmed one-way, in-place conversion
 
-| Phase | Exit proof | Reversal |
+The Principal selected in-place conversion, not a supported return to the old
+source-working installation. Keep the Lazurio Folder, Organization repositories,
+Personalspace and their worktrees at their existing paths. The separate compatibility
+alias procedure above is not part of this conversion when paths are already correct.
+
+The installed CLI/Launchpad core uses the selected profile from its compatible installed
+distribution, previews the exact owned diff and applies it locally. Legacy Git provides
+inventory/provenance and custom-change detection, not profile delivery: do not pull or
+check out generated profile branches as the migration mechanism.
+
+After preserving unique work and checking dependencies, retire only the old product's
+Git metadata, recognized obsolete product files and its own disposable worktrees.
+Preserve legacy history/custom work as recovery evidence, not a runnable old installation.
+Organization/Personalspace repositories and their worktrees are not cleanup targets;
+their existing directories are excluded from product cleanup and generated-output writes,
+not merely left at the same paths. No recursive cleanup may cross these boundaries.
+verify their Git common directories and indirections remain independent and functional.
+Unknown files and edited instructions are preserved rather than blindly overwritten.
+An unresolved dependency or unattributed work blocks the affected destructive step.
+
+Recovery means protecting data and resuming or repairing forward. Returning the whole
+Folder to a legacy Git checkout is not an acceptance requirement. This does not relax
+product-version rollback or the separate shared-workshop migration contract.
+
+## Legacy source-working → Lazurio Environment phases and recovery
+
+| Phase | Exit proof | Recovery |
 | --- | --- | --- |
 | Discover and plan | Exact inventory, known schema, approved owner/target, supported platform | No writes, no rollback needed |
 | Checkpoint | Offline-restorable verified copy, refs/index/dirty/untracked/stash/worktree parity, enough space | Delete only own unused staging after safe cleanup check |
 | Quiesce | Affected managed processes drained, active writers reconciled, fingerprint unchanged | Restart the exact old runtime; preserved sessions/files unchanged |
-| Prepare managed target | Valid staged artifacts and generation; nested Git mapping validated; no new active locator | Restore/check old paths before resuming any writer |
-| Switch active locator | One canonical Lazurio Folder and one runtime identity; native path/process checks | Before new writes, inverse relocation plus exact old runtime/config |
-| Verify and allow writes | Actual CLI/Launchpad/module smoke, credentials operation proof, data/Git parity | After new writes, reconcile/preserve new work before restoring old layout |
-| Retire source-as-runtime | Agreed observation period, backup restore drill, no dependent processes/paths | Historical source/backup retained until explicit retention decision |
+| Prepare owned output | Valid installed profile and staged generation; nested Git independence verified; unchanged working paths | Preserve checkpoint and existing data; refuse an invalid plan |
+| Convert in place | Retire enumerated old product files/Git state and apply owned output; same Folder path and one runtime identity | Resume recognized phases or repair forward; no legacy-installation rollback required |
+| Verify and allow writes | CLI and affected-consumer smoke, credentials operation proof, protected data/Git parity | Preserve new work and repair forward, never overwrite it with a checkpoint |
+| Retire remaining product worktrees | Unique work/history preserved, no dependent consumers, exact cleanup inventory | Retain recovery evidence under an explicit retention decision |
 
-After target-side user writes or incompatible schema changes, rollback is not a
-simple directory rename. Compare both inventories, preserve new work, then either
-perform a reviewed inverse migration or forward repair. Never silently discard new
+After conversion begins, recovery is forward-oriented rather than a supported return
+to the old installation. Compare inventories and preserve new work before repair.
+Never silently discard new
 work to recover a green check. Interrupted operations resume only from a recognized
 journal phase and matching artifacts; ambiguity produces a no-op recovery report.
 
 The optional developer source checkout is migrated separately from active Lazurio Folder
-selection. Preserve legacy source refs, worktrees and provenance; do not redirect
+selection. Preserve unique legacy work and provenance; old product worktrees may be
+retired under the checks above, unlike protected Organization worktrees. Do not redirect
 its remote to Platform because the names look related. Platform is a separate repo.
 
 ## Shared workshop → dedicated environments

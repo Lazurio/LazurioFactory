@@ -55,6 +55,14 @@ no-global-sync rule; no mechanism is selected in this draft.
 
 ## F1 — Public Platform codebase and Folder Factory
 
+**Migration direction confirmed:** convert the existing Lazurio Folder in place and
+one-way, preserving Organization/Personalspace paths, repositories and worktrees.
+The installed distribution supplies the selected profile; legacy Git is inventory and
+provenance, not a profile-branch delivery mechanism. Retire only identified legacy
+product files, Git metadata and product worktrees after preserving unique work and
+checking dependencies. Data recovery and interrupted-operation forward repair remain
+required; restoring a runnable legacy checkout does not. See the migration contract.
+
 **Direction accepted in the request:** a public TypeScript Platform repository containing
 CLI, Launchpad, Lazurio Folder Factory and shared contracts. Folder Factory owns only the
 generation/reconciliation capability; it is not the whole product or a Machine-level
