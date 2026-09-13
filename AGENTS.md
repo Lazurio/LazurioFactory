@@ -35,7 +35,7 @@ deliberately reused component, and port only behavior justified by a consumer.
 
 The proof has no install/update/profile-write/migrate command. Lazurio Folder Factory is
 the shared planning/generation/reconciliation component used by CLI and Launchpad;
-installed Launchpad owns local application of configuration and desired changes. A source
+the shared local core owns application of configuration and desired changes through CLI or Launchpad. A source
 checkout never applies them remotely. Do not quietly turn
 it into one. Implement each subsequent slice only after its recorded acceptance and
 decision prerequisites are satisfied. Test behavior and failure recovery, not source

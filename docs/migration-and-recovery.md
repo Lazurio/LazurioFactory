@@ -19,6 +19,20 @@ A working profile belongs to the individual Machine installation. Changing it he
 does not update any other Machine used by the same Principal. Profile transport or
 copy is outside this first capability; no automatic sync is part of upgrade.
 
+## Shared local migration use case
+
+The official installed CLI can complete migration without a running Launchpad, source
+checkout or separate Folder Factory installation. CLI and Launchpad invoke the same
+application-core use case; neither carries its own migration implementation. The core
+orchestrates inventory, approved plan, verified checkpoint, transition and recovery
+through platform adapters. Folder Factory supplies only profile-based owned content.
+
+Equivalent inputs, authority and initial state must yield equivalent plans, checks,
+effects and recovery outcomes through either interface. Both share the same operation
+lock and recovery state; simultaneous CLI/Launchpad requests cannot create two writers.
+UI presentation may differ. No command names, packaging split or new service are selected
+here, and these requirements do not claim an implemented migrator.
+
 ## macOS Lazurio Folder compatibility aliases
 
 The target macOS layout has exactly one real Lazurio Folder at `<home>/Lazurio`.
@@ -27,8 +41,8 @@ that folder so historical chats and tools using either absolute path continue to
 resolve the same files. The aliases are not additional Environments, writable replicas
 or evidence that the legacy Conglomerate product meaning is current.
 
-The eventual migration is a local CLI/Launchpad operation. Lazurio Folder Factory may
-produce the plan and owned content contract, but neither this source checkout nor a
+The eventual migration is a shared local-core operation exposed by CLI and Launchpad.
+Folder Factory supplies the owned content contract, not the Git migration plan. Neither this source checkout nor a
 remote Dashboard mutates a Machine directly. macOS is the first explicit adapter;
 Windows and Linux require separate path/link evidence and must not inherit symlink
 assumptions.
@@ -69,8 +83,9 @@ still reference them.
    to distinguish prepared, activated and validated states after a crash. Do not build
    a second general workflow database: the installed manifest and bounded journal
    belong to the installer, not to access authority.
-7. Verify the actual installed command and Launchpad readiness using the activated
-   version. On failure retain or restore the compatible prior generation. Report
+7. Verify the actual installed command and affected consumers using the activated
+   version. CLI migration does not require launching the graphical interface; verify
+   Launchpad readiness when it is an affected running consumer. On failure retain or restore the compatible prior generation. Report
    exact state and recovery action, never success merely because files copied.
 
 POSIX rename and native Windows replacement/locking behavior need separate adapter

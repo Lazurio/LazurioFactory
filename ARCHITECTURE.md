@@ -17,7 +17,7 @@ private data and credentials remain in their existing custody boundaries.
 
 1. A normal installation and upgrade operate without any Platform source checkout.
    Installed Lazurio contains CLI, Launchpad and Lazurio Folder Factory. CLI and Launchpad
-   invoke the same core; Launchpad applies configuration and desired changes locally.
+   invoke the same core; the shared core applies configuration and desired changes locally.
 2. Lazurio Folder Factory plans, generates and reconciles only enumerated Lazurio-owned
    instructions/configuration in a non-Git Lazurio Folder.
    Organization repos, Personalspace, Git state and runtime data are never generator inputs to overwrite.
@@ -63,7 +63,7 @@ Launchpad HTTP/API adapter ──┼── application use cases ── platform
 browser UI ── typed API ─────┘          └── pure contracts/profile renderer
 
 Platform source → versioned build → installed Lazurio ─┬─ CLI
-                                                       ├─ Launchpad → local application
+                                                       ├─ Launchpad → shared core
                                                        └─ Folder Factory → Lazurio Folder
                                                                             └─ selected profile (input)
 Organization/Personalspace repos ← their own Git/data owners; never build output
@@ -82,7 +82,7 @@ installed executable, not a separate implementation of installation/profile logi
 | Source, profile templates, skills, default rules | Reviewed Lazurio Platform source | Build produces immutable release artifacts; no runtime edits to source |
 | Installed executable and assets | Product installer/updater | Versioned OS-standard user installation location, manifest and retained rollback version |
 | Chosen collaboration profile, locale, detail preference | Machine-local versioned settings selected by its Principal | Profile use case validates then generates instructions; upgrade preserves preference |
-| Lazurio Folder generation and expected digests | Lazurio Folder Factory and its installed generation manifest | Launchpad invokes the shared plan locally and replaces only listed owned paths |
+| Lazurio Folder generation and expected digests | Lazurio Folder Factory and its installed generation manifest | CLI or Launchpad invokes the shared core locally and replaces only listed owned paths |
 | Organization identity, repo and app declarations | Organization manifests | Discovery and lifecycle consume them; Platform source never creates a second allowlist |
 | Git access, membership, publication permission | GitHub | Live checks for online mutations; offline state is not fresh authority |
 | Running app processes | Existing lifecycle owner, adapted once | One process tree and one state locator, bounded to the actual environment |
@@ -130,7 +130,7 @@ neither access nor a parallel copy of truth. GitHub remains access authority for
 connected Organization, and Machine facts remain local. Personalspace, credentials and
 private content are not centralized or crossed. If Dashboard later originates a desired
 change, that intent must write through to the fact's natural owner and the target Machine
-must apply it locally through Launchpad.
+must apply it through the local shared core exposed by CLI and Launchpad.
 
 This is intentionally a minimal projection/view, not a central control plane. Whether
 any central registry exists is open because it may conflict with the current

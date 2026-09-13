@@ -14,8 +14,21 @@ The source produces installed releases and is not itself a daily Machine checkou
 
 An installed release contains CLI, Launchpad and **Lazurio Folder Factory**. Folder Factory
 is the shared component that plans, generates and reconciles Lazurio-owned paths from a
-selected profile. CLI and Launchpad use the same core; Launchpad is the local application
-boundary and no remote source repository mutates a Machine.
+selected profile. CLI and Launchpad invoke the same local application core; that core
+owns local application through platform adapters. Neither UI is an independent writer,
+and no remote source repository mutates a Machine.
+
+**Migration entrypoints confirmed by the Principal:** the official installed CLI must
+complete migration without running Launchpad or separately installing Folder Factory.
+The release includes the required shared core and Folder Factory capability. Launchpad
+invokes the same migration use case, rather than requiring a shell invocation of CLI.
+Given equivalent inputs, authority and initial state, both entrypoints must produce
+equivalent plans, checks, effects and recovery outcomes. The core owns inventory,
+checkpoint, transition and recovery orchestration; Folder Factory owns only profile-based
+owned-content planning/generation/reconciliation, not preservation of the legacy Git repo.
+Both entrypoints share mutation exclusion and recovery state, preventing concurrent
+writes to the same Environment. This replaces the earlier Launchpad-only apply wording;
+it is a target contract, not an implemented migration or a new daemon/package decision.
 
 The resulting composition of compatible installed components and a correctly materialized
 **Lazurio Folder** on one Machine is a **Lazurio Environment**. Treat `Managed Root`
@@ -27,7 +40,7 @@ Organizations, with meaningful relationships and flows of data, information and 
 It is not a directory, Organization, shared access boundary, ACL or authority. Dashboard
 is initially the whole-system overview/reasoning surface, not control authority. It keeps
 no parallel truth and grants no access. A future Dashboard-originated change must write
-through to the natural owner and be applied locally on the target Machine by Launchpad.
+through to the natural owner and be applied locally on the target Machine by the shared local core exposed by CLI and Launchpad.
 
 GitHub remains connected-Organization access authority. Machine facts stay local;
 Personalspace, credentials and private content are not centralized or crossed. Machines

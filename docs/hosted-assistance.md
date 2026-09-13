@@ -8,7 +8,7 @@ a platform dashboard without installing a local development toolchain.
 At the whole-system level Dashboard is initially an overview and reasoning projection,
 not an access or control authority. It keeps no parallel truth. Any later desired change
 originated there must be written through to the natural owner and applied locally on the
-target Machine by installed Launchpad. The topology owner, discovery/projection/freshness
+target Machine by the installed shared core exposed by CLI and Launchpad. The topology owner, discovery/projection/freshness
 and write-through mechanism remain open; this document does not define a central registry.
 
 ## One ownership model
