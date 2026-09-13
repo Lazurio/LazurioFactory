@@ -68,9 +68,12 @@ CLI, Launchpad, Lazurio Folder Factory and shared contracts. Folder Factory owns
 generation/reconciliation capability; it is not the whole product or a Machine-level
 authority. Local and hosted environments, Buddy and AI Colleagues consume installed
 Platform releases.
-**Implementation proposal, not yet approved:** one Bun/TypeScript product, native
-CLI and HTTP adapter, shared core, standalone distribution as the first supported
-consumer channel. React/Vite for the real Launchpad remains under consideration;
+**Confirmed stack and installation direction:** develop the CLI and shared core in
+strict TypeScript with pinned Bun tooling. Distribute a standalone executable containing
+its required runtime; users do not need a separately installed Bun, Node or npm. First
+installation starts with a terminal command and a thin bootstrap that verifies and
+installs Lazurio; environment setup belongs to the shared core. Exact bootstrap trust,
+hosting and signing mechanisms remain to be selected and tested. React/Vite for the real Launchpad remains under consideration;
 the proof's tiny native HTML surface is not a final UI framework selection.
 
 Baseline incremental cleanup of the legacy source-working directory retains deployment coupling.
@@ -88,6 +91,13 @@ Do not maintain npm and standalone as two independently implemented update chann
 If a package-manager shim is later needed, it must select the same verified release.
 
 ## F2 — A dedicated environment per Principal
+
+The team's first development prerequisite is a working HumanAndMachineEmpire composition
+in the owning Organization's Production Space, preserving existing checkouts and work.
+It is the common starting point for development, integration verification and release
+preparation. Component repositories retain source/review ownership; the public Platform
+must remain independently buildable and usable without the private composition.
+This prerequisite is not a requirement to finish Dashboard/Auth or deploy hosted services.
 
 **Direction accepted in the request:** retire the shared multi-Principal workshop
 as the target execution topology. Collaboration occurs through authorized repos,

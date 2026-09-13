@@ -75,7 +75,9 @@ Platform source → versioned build → installed Lazurio ─┬─ CLI
 Organization/Personalspace repos ← their own Git/data owners; never build output
 ```
 
-The recommended stack is still a proposal, not a user-approved framework decision.
+TypeScript with pinned Bun development/build tooling is confirmed. The specific UI
+framework remains open. The target terminal bootstrap delivers a standalone executable
+without a separately installed user Bun/Node/npm prerequisite.
 Start with one repository and one package, divided into directories when a real
 consumer needs the boundary. Do not create a package, daemon or generic interface
 per box. Core must not import CLI, browser, server or ambient filesystem state.

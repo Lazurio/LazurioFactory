@@ -1,6 +1,6 @@
 # Stack decision evidence — bounded feasibility proof
 
-Status: unaccepted implementation recommendation for review, not a released product or a claim of cross-platform readiness. Recorded 2026-09-08. The consumer is a disposable profile preview in `proof/`; no installer, updater, migration, discovery, activation or identity implementation exists here.
+Status: bounded feasibility evidence recorded 2026-09-08. TypeScript/Bun and standalone terminal installation direction confirmed 2026-09-13; detailed framework and distribution mechanisms remain proposals. This is not a released product or a claim of cross-platform readiness. The consumer is a disposable profile preview in `proof/`; no installer, updater, migration, discovery, activation or identity implementation exists here.
 
 ## Decision and alternatives
 
