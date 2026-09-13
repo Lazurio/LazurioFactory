@@ -26,7 +26,7 @@ recursive source packaging.
 
 Private Lazurio Account/Auth, Dashboard and managed-hosting repositories are likewise
 not submodules or build dependencies of this public repository. Authorized company
-collaborators compose them through the private `HumanAndMachinePlatform` integration;
+collaborators compose them through the private `HumanAndMachineEmpire` integration;
 public users receive a complete self-hostable Platform without inaccessible placeholders.
 
 The distribution slice must install a maintained secret scanner in CI, pinned to an

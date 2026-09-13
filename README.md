@@ -14,7 +14,7 @@ not a live shared directory or identical state.
 
 Optional services operated by Human and Machine s.r.o.—Lazurio Account/Auth, Lazurio
 Dashboard and managed Machine hosting—are not required for a self-hosted Lazurio
-Environment. Their private integration belongs to `HumanAndMachinePlatform`, not this
+Environment. Their private integration belongs to `HumanAndMachineEmpire`, not this
 public codebase.
 
 **Status: architecture and implementation preparation.** The small executable proof

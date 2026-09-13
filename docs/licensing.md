@@ -26,7 +26,7 @@ it is not granted by repository access, contribution, Organization membership or
 public ELv2 terms. Exact commercial terms are intentionally not defined here.
 
 Private Lazurio Account/Auth, Lazurio Dashboard and managed-hosting components composed
-through `HumanAndMachinePlatform` remain under their own proprietary terms. They are
+through `HumanAndMachineEmpire` remain under their own proprietary terms. They are
 optional company services, not required dependencies of a self-hosted Lazurio Environment.
 
 | Material | License boundary |

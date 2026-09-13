@@ -94,10 +94,11 @@ the target Lazurio Folder remains `<home>/Lazurio`. The release activation mecha
 must work on native Windows without assuming executable overwrite or POSIX symlinks.
 Detailed physical layout is an installer-slice decision, constrained by these owners.
 
-Platform developers use a separate source checkout, currently mounted as an Organization's
-`productionspace/LazurioFactory`. The accepted target repository name is
-`Lazurio/LazurioPlatform`; the physical GitHub/path rename is not performed by this
-architecture draft. Existing `development/Lazurio` legacy-source
+Platform developers use a separate source checkout. The canonical repository was renamed
+to `Lazurio/LazurioPlatform` on 2026-09-13 while preserving its GitHub repository identity
+and history. An Organization may temporarily retain the legacy local mount
+`productionspace/LazurioFactory` until its guarded path migration to
+`productionspace/LazurioPlatform`. Existing `development/Lazurio` legacy-source
 coordinates remain migration provenance; changing a directory name does not select
 a runtime. Legacy `development/Lazurio` is not part of the target standard Lazurio
 Environment.
@@ -135,7 +136,7 @@ This is intentionally a minimal projection/view, not a central control plane. Wh
 any central registry exists is open because it may conflict with the current
 no-central-registry/no-global-sync rule. Also open are topology ownership,
 discovery/projection/freshness, future write-through, privacy/observability, the physical
-repository rename and the legacy terminology migration. No implementation mechanism for
+legacy local-mount migration and the legacy terminology migration. No implementation mechanism for
 those choices is selected here.
 
 ## Public platform and private managed services
@@ -146,7 +147,7 @@ or Human and Machine hosting to form a working Lazurio Environment.
 An external implementer may help a customer deploy Lazurio for that customer's own
 internal use; that implementation work alone is not a competing managed Lazurio service.
 
-`HumanAndMachinePlatform` is the proposed private integration repository owned by Human
+`HumanAndMachineEmpire` is the private integration repository owned by Human
 and Machine s.r.o. It may pin the public Lazurio Platform together with private Lazurio
 Account/Auth, Lazurio Dashboard and managed-hosting components for authorized company
 collaborators. It is a development, test and service-delivery composition, not a runtime

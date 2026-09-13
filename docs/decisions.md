@@ -7,8 +7,9 @@ legacy runtime contracts until the owning decision is amended and consumers migr
 ## F0 — Confirmed vocabulary and responsibility split
 
 **Direction confirmed by the Principal:** the product is **Lazurio Platform**. Its public,
-source-available codebase is intended to become `Lazurio/LazurioPlatform`; the current
-`Lazurio/LazurioFactory` repository/path remains unchanged until a separate physical rename.
+source-available codebase is `Lazurio/LazurioPlatform`; the repository was renamed from
+`Lazurio/LazurioFactory` on 2026-09-13 without replacing its GitHub identity or history.
+Legacy local checkout paths migrate separately and may temporarily retain the old basename.
 The source produces installed releases and is not itself a daily Machine checkout.
 
 An installed release contains CLI, Launchpad and **Lazurio Folder Factory**. Folder Factory
@@ -121,14 +122,14 @@ infrastructure details stay outside this repository.
 
 Open decisions are: possible conflict with the no-central-registry/no-global-sync rule;
 the natural owner of topology; discovery, projection and freshness; any future
-Dashboard write-through path; privacy and observability; physical repository rename;
+Dashboard write-through path; privacy and observability; legacy local-checkout migration;
 and migration of legacy terminology. None is an implied implementation task.
 
 ## Provenance and publication
 
-`Lazurio/LazurioFactory` is the current public repository and the accepted target name is
-`Lazurio/LazurioPlatform`; this draft does not perform that provider mutation. It is not
-a transfer or rename of `HumanAndMachines/Lazurio`. Creating or renaming the repository does not change legacy package
+`Lazurio/LazurioPlatform` is the current public repository. It was renamed from
+`Lazurio/LazurioFactory` on 2026-09-13 and is not a transfer or rename of
+`HumanAndMachines/Lazurio`. The repository rename does not change legacy package
 coordinates, Git remotes, signing identities, releases, version history or IP rights.
 
 Public-first development was explicitly requested after repository creation. The
@@ -219,11 +220,12 @@ delivery, with separately contracted partners as the explicit exception.
 External implementers may deploy Lazurio for a customer's own internal use without that
 implementation alone becoming the reserved customer-facing managed service.
 
-`HumanAndMachinePlatform` is a proposed private integration repository. It composes the
+`HumanAndMachineEmpire` is the private integration repository. It pins the
 public Lazurio Platform with private Lazurio Account/Auth, Lazurio Dashboard and managed
 Machine-hosting components. Those services are optional for self-hosted Lazurio and do
 not become access authority for Organization repositories merely by being integrated.
-Exact repository layout, partner agreements, prices and hosting mechanisms remain open.
+Its initial composition uses exact Git submodule pins; partner agreements, prices,
+cross-component release rules and hosting mechanisms remain open.
 
 The licensing model is Elastic-2.0 for public Platform code plus a separately negotiated
 commercial license for approved service providers. This is source-available, not OSI

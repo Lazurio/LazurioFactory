@@ -19,6 +19,39 @@ A working profile belongs to the individual Machine installation. Changing it he
 does not update any other Machine used by the same Principal. Profile transport or
 copy is outside this first capability; no automatic sync is part of upgrade.
 
+## macOS Lazurio Folder compatibility aliases
+
+The target macOS layout has exactly one real Lazurio Folder at `<home>/Lazurio`.
+`<home>/Conglomerate` and `<home>/Conglomerate_GEN3` are compatibility symlinks to
+that folder so historical chats and tools using either absolute path continue to
+resolve the same files. The aliases are not additional Environments, writable replicas
+or evidence that the legacy Conglomerate product meaning is current.
+
+The eventual migration is a local CLI/Launchpad operation. Lazurio Folder Factory may
+produce the plan and owned content contract, but neither this source checkout nor a
+remote Dashboard mutates a Machine directly. macOS is the first explicit adapter;
+Windows and Linux require separate path/link evidence and must not inherit symlink
+assumptions.
+
+Before the first write, inspect all three paths with `lstat`, `readlink` and canonical
+path resolution; inventory nested Git/worktree state and active writers; and identify
+one authoritative populated tree. If more than one distinct real tree contains data,
+the target is occupied, a symlink points elsewhere, or the state is not understood,
+stop with a no-op report. Never merge or recursively copy the trees merely because
+their basenames are recognized.
+
+After a verified checkpoint and quiescence, move the one authoritative real directory
+to `<home>/Lazurio` only when the destination is absent. Validate that canonical Folder
+through Doctor, then create both legacy symlinks. An already-correct symlink is an
+idempotent success. Journal the exact pre-state, move and link operations so interruption
+can resume or report a bounded repair instead of guessing.
+
+Before new writes, rollback may restore the original real basename and remove only
+aliases created by the recorded operation. After new writes, keep the same canonical
+Folder and perform forward repair; never recreate independent copies or discard newer
+work. Do not remove the aliases while supported consumers or historical chat paths may
+still reference them.
+
 ## Common mutation discipline
 
 1. Identify Principal, Machine Owner and parent provider/operator boundary. Check
@@ -149,8 +182,9 @@ by the Platform foundation.
 ## Legacy source checkout retirement
 
 `development/Lazurio` is not a target standard component of a Lazurio Environment;
-Platform development belongs in the target `productionspace/LazurioPlatform`; until the
-separate repository/path rename, the current mount remains `productionspace/LazurioFactory`.
+Platform development belongs in `productionspace/LazurioPlatform`. The GitHub repository
+has been renamed; an existing `productionspace/LazurioFactory` checkout remains a legacy
+local path until a separate guarded mount migration proves all consumers and worktrees.
 Do not equate path relocation with runtime activation. Before retiring old source,
 inventory shell/launcher/service paths, dependencies, scripts, open sessions, module
 references and all linked worktrees in addition to refs/index/dirty/untracked/ignored
