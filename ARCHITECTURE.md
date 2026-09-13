@@ -1,6 +1,6 @@
-# Lazurio Factory architecture
+# Lazurio Environment Factory architecture
 
-Status: proposed implementation contract, 2026-09-08. Product direction is supplied
+Status: proposed implementation contract, updated 2026-09-13. Product direction is supplied
 by the Principal; this document does not claim that the target is deployed. Decision
 amendments and rollout gates are in [decisions](docs/decisions.md).
 
@@ -9,12 +9,16 @@ amendments and rollout gates are in [decisions](docs/decisions.md).
 Provide a stable, maintainable product for hundreds of people building their own
 Organizations, on local or hosted environments, including Buddy and AI Colleagues.
 Removing architectural debt is the purpose; converting JavaScript syntax alone is
-insufficient. A new Factory repository is the chosen development direction.
-Factory is public-first: architecture, implementation and verification are transparent;
+insufficient. Lazurio Environment Factory (**Factory** for short) is the chosen public
+development, build and distribution source. Factory produces Lazurio releases; it is
+never installed on target Machines and never applies Machine changes. Architecture,
+implementation and verification are transparent;
 private data and credentials remain in their existing custody boundaries.
 
-1. A normal installation and upgrade operate without any Factory checkout.
-2. A generated non-Git Root owns only enumerated instructions/configuration.
+1. A normal installation and upgrade operate without any Factory checkout. Installed
+   Lazurio contains Launchpad; Launchpad applies configuration and desired changes locally
+   on its Machine.
+2. A generated non-Git environment directory owns only enumerated instructions/configuration.
    Organization repos, Personalspace, Git state and runtime data are never generator inputs to overwrite.
 3. Every operation identifies the actual Principal, Machine Owner and higher host/operator boundary.
    Owner-local work uses the existing Machine/filesystem boundary; GitHub remains
@@ -23,7 +27,8 @@ private data and credentials remain in their existing custody boundaries.
 4. CLI and UI invoke the same use cases, validation and errors. Each persistent fact has one owner.
 5. A failed operation preserves the last known usable generation or stops with recoverable evidence.
    Unknown state is a refusal to mutate, not permission to rebuild.
-6. Source Root and shared hosted workshop are explicitly transitional paths with retirement gates.
+6. The legacy source-working directory and shared hosted workshop are explicitly
+   transitional paths with retirement gates.
 
 This preparation does not rewrite legacy apps, migrate current hosts, implement
 account/billing services, choose commercial terms or create a release mandate.
@@ -32,7 +37,7 @@ account/billing services, choose commercial terms or create a release mandate.
 
 | Concern | Existing evidence | Factory target |
 | --- | --- | --- |
-| Root | Supported source checkout also acts as working Root | Installed product outside a thin generated non-Git working Root |
+| Environment directory | Supported source checkout also acts as the working directory | Installed product outside a thin generated non-Git Lazurio directory |
 | Distribution | Legacy npm gate explicitly expects package-only Launchpad unavailable | Full CLI and Launchpad work from installed artifacts, with source absent |
 | Runtime | Existing CLI/core boundaries and extensive preservation fixtures are useful evidence | Port proven invariants into small owner-focused TypeScript modules |
 | Hosted work | Shared Hosted Team Workspace is current documented model | Environment dedicated to one Principal, with higher provider boundary stated |
@@ -56,7 +61,7 @@ Launchpad HTTP/API adapter ──┼── application use cases ── platform
                              │          │
 browser UI ── typed API ─────┘          └── pure contracts/profile renderer
 
-Factory source → versioned build → installed product → owned Root generation
+Factory source → versioned build → installed Lazurio → Launchpad → local environment changes
                                                 └── user preferences (input)
 Organization/Personalspace repos ← their own Git/data owners; never build output
 ```
@@ -74,7 +79,7 @@ installed executable, not a separate implementation of installation/profile logi
 | Source, profile templates, skills, default rules | Factory reviewed source | Build produces immutable release artifacts; no runtime edits to source |
 | Installed executable and assets | Product installer/updater | Versioned OS-standard user installation location, manifest and retained rollback version |
 | Chosen collaboration profile, locale, detail preference | Machine-local versioned settings selected by its Principal | Profile use case validates then generates instructions; upgrade preserves preference |
-| Generated paths and digests | Installed generation manifest | Generator compares expected prior digests before replacing only listed owned paths |
+| Generated paths and digests | Installed generation manifest | Launchpad compares expected prior digests before replacing only listed owned paths |
 | Organization identity, repo and app declarations | Organization manifests | Discovery and lifecycle consume them; Factory never creates a second allowlist |
 | Git access, membership, publication permission | GitHub | Live checks for online mutations; offline state is not fresh authority |
 | Running app processes | Existing lifecycle owner, adapted once | One process tree and one state locator, bounded to the actual environment |
@@ -82,19 +87,52 @@ installed executable, not a separate implementation of installation/profile logi
 | Planning and delivery status | Owning Organization Mission Control | Links to code and knowledge; no product-local task ledger |
 
 Installed executable location uses OS-standard per-user data/install conventions;
-the target working Root remains `<home>/Lazurio`. The release activation mechanism
+the target Lazurio directory remains `<home>/Lazurio`. The release activation mechanism
 must work on native Windows without assuming executable overwrite or POSIX symlinks.
 Detailed physical layout is an installer-slice decision, constrained by these owners.
 
 Factory developers use a separate source checkout, e.g. an Organization's
-`productionspace/LazurioFactory`. Existing `development/Lazurio` legacy-source
+`productionspace/LazurioFactory`. This physical repo/path identity is unchanged by the
+product-name clarification. Existing `development/Lazurio` legacy-source
 coordinates remain migration provenance; changing a directory name does not select
-a runtime. Legacy `development/Lazurio` is not part of the target standard working Root.
+a runtime. Legacy `development/Lazurio` is not part of the target standard Lazurio
+Environment.
 Retire an existing checkout only through the dependency/ref/worktree/dirty-work
 inventory and restore gates in the migration contract; nothing is removed now.
 Isolated worktree testing and explicit integrated-candidate Machine activation are
 different accepted workflows, defined in [release lifecycle](docs/release-cycle.md).
-Program selection and Root selection are independent; source edits are never live.
+Program selection and environment-directory selection are independent; source edits
+are never live.
+
+## Confirmed system topology
+
+A **Lazurio Environment** is the resulting local working environment on one Machine.
+Its physical location is called the **Lazurio directory** or **environment directory**;
+`Managed Root` and `Lazurio Root` are not user-facing names because `root` is ambiguous
+on Linux. Machines share a versioned environment contract and conventions/interfaces.
+They do not share one live directory and are not required to hold identical state.
+
+The **Conglomerate** is the end-state fleet/graph of Machines and their Lazurio
+Environments across Organizations, including meaningful relationships and flows of
+data, information and work. It is not a directory, an Organization, an access boundary,
+an ACL or an authority. Canonical decision 0128 deprecated `Conglomerate` as the old
+root/product name, while `Conglomerate Host` already names a specific infrastructure
+Machine profile. The new fleet meaning therefore needs an explicit canonical amendment
+and legacy-terminology plan; this draft does not silently rewrite either decision.
+
+Dashboard initially presents the whole-system overview and reasoning surface. It owns
+neither access nor a parallel copy of truth. GitHub remains access authority for each
+connected Organization, and Machine facts remain local. Personalspace, credentials and
+private content are not centralized or crossed. If Dashboard later originates a desired
+change, that intent must write through to the fact's natural owner and the target Machine
+must apply it locally through Launchpad.
+
+This is intentionally a minimal projection/view, not a central control plane. Whether
+any central registry exists is open because it may conflict with the current
+no-central-registry/no-global-sync rule. Also open are topology ownership,
+discovery/projection/freshness, future write-through, privacy/observability, the physical
+repository rename and the legacy terminology migration. No implementation mechanism for
+those choices is selected here.
 
 ## Environment composition
 
@@ -210,7 +248,7 @@ A Machine profile is not a snapshot of Organization access. Generated base AGENT
 instructs the agent, when entering a connected Organization, to use the installed CLI's shared discovery capability to identify
 the active provider identity, accessible Organizations/repos, known local paths and
 the permitted materialization procedure. It then reads the selected Organization's
-AGENTS.md before work there. Root profiles never embed an Organization roster, its
+AGENTS.md before work there. Base profiles never embed an Organization roster, its
 instructions or private data. An Organization list is not authorization for all actions.
 
 One provider probe serves CLI, Launchpad and Doctor. Its result separates provider
@@ -243,7 +281,7 @@ Organization; this public source contains the complete generic technical boundar
 ## Maker's first use
 
 Accepted entry journey: obtain the small CLI utility, select a community-tested
-profile, create a Managed Root and use an existing Codex or Claude Code installation
+profile, create a Lazurio Environment and use an existing Codex or Claude Code installation
 with the maker's own model access. First value is transferring a versioned working
 method/persona into an agent already in use. An Organization, hosted environment or
 platform credits are not prerequisites. Empty Organization discovery is a valid

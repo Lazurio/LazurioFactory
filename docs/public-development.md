@@ -1,6 +1,6 @@
 # Public development and secret custody
 
-Factory is developed publicly from the foundation. Implementation, architectural
+Lazurio Environment Factory (Factory) is developed publicly from the foundation. Implementation, architectural
 decisions (including rejected alternatives), tests, build procedures and sanitized
 failure evidence should be understandable without a private chat or document.
 Private planning may schedule this work but must not become a hidden technical

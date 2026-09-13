@@ -12,15 +12,15 @@ the other slices are complete.
 | --- | --- | --- |
 | 0 — Foundation review | Product intent and repository routing | Public architecture, explicit decision amendments, stack comparison, working standalone proof, independent review |
 | 1 — Distribution | Accepted stack and release trust/layout decisions | Clean machine runs full installed CLI + Launchpad without source; signed/tampered/offline artifact cases and artifact secret scan |
-| 2 — Managed generation | Slice 1 and ownership/schema contract | Fresh dedicated human environment produces only owned Root files, starts full app; unknown/edited paths preserved; rollback drill |
+| 2 — Environment generation | Slice 1 and ownership/schema contract | Fresh dedicated human environment produces only owned environment-directory files through Launchpad, starts full app; unknown/edited paths preserved; rollback drill |
 | 3 — Profile capability | Slice 2 and accepted behavior schema | CLI and Launchpad use the same profile use case; deterministic generation, stale revision refusal, session pin/restart and upgrade preservation |
 | 4 — Environment purposes | Slices 2–3 and hosting amendment | Dedicated human/Buddy/AI Colleague acceptance with correct Principal, Owner, custody and unavailable-capability behavior |
-| 5 — Migration rehearsal | Relevant slices 1–4, legacy compatibility and restore mapping | Faithful dirty Source Root fixtures plus shared-workshop transition prove preservation, interrupted recovery and no-op unknown state |
+| 5 — Migration rehearsal | Relevant slices 1–4, legacy compatibility and restore mapping | Faithful dirty legacy source-working fixtures plus shared-workshop transition prove preservation, interrupted recovery and no-op unknown state |
 | 6 — Opt-in cohorts | Qualified consumer slices; rehearsal and explicit migration approval for migrating cohorts | Small native cohort on each supported OS, user completion evidence, observation and recovery; halt on data loss/identity ambiguity |
 | 7 — General availability and retirement | Successful cohorts, public release approval | Published support matrix and release provenance; legacy install/update paths retired by declared criteria, backups retained by policy |
 
 Fresh local cohorts qualify distribution, generation, profile and local-founder behavior;
-they do not wait for unrelated hosted/shared-workshop migration. Existing-Root migration
+they do not wait for unrelated hosted/shared-workshop migration. Existing-environment migration
 cohorts must pass their preservation/recovery gate; hosted cohorts additionally need the
 hosting amendment and envelope proof. Broad support/retirement claims require every
 claimed cohort's evidence. The three-OS/two-harness first-transition gate stays binding.
@@ -32,7 +32,9 @@ fixes continue with their owners; selectively port proven contracts with provena
 
 | Area | Positive proof | Negative / failure proof |
 | --- | --- | --- |
-| Installation | CLI and real Launchpad run from installed artifact in a fresh home without Factory/Bun source tools | Missing dependency, bad signature/digest/platform, hostile archive, occupied Root: no partial activation |
+| Installation | CLI and real Launchpad run from installed artifact in a fresh home without Factory/Bun source tools; Factory is absent from the target Machine | Missing dependency, bad signature/digest/platform, hostile archive, occupied environment directory: no partial activation |
+| Factory / Launchpad boundary | Factory builds a release; installed Launchpad locally applies a Machine-owned configuration change | Factory checkout/source on the target, remote Factory mutation of a Machine, or a second local writer fails the boundary review |
+| Conglomerate projection | Whole-system view resolves Organization access from GitHub and Machine facts from their local owners, with freshness/unknown state visible | View grants access, becomes a parallel truth, crosses Personalspace/credentials/private content, or treats the fleet as a shared directory/Organization |
 | Shared core | CLI and UI produce equivalent validated operation plans and reason codes | UI cannot bypass validation/authority; unknown fields/enums/schema rejected |
 | Profile | Two Machines of one Principal retain different profiles; local change does not sync; detail changes independently from delegation and locale; deterministic digest; upgrade retains selection | Manual output drift, stale revision, unsupported purpose/locale, concurrent mutation, missing harness capability |
 | Public development | Source, build commands and sanitized evidence publicly reproducible | CI catches synthetic secret and `.env` in archive without printing values; placeholders stay valid |
@@ -64,6 +66,12 @@ Native compiled smoke does not prove app compatibility, signed distribution,
 installer readiness, hosting isolation or migration safety. CI workflow presence
 does not prove that an exact head passed. Preserve exact source/artifact versions
 and test output with explicit skipped/unavailable cells.
+
+The confirmed rough topology does not select a registry, topology store, discovery
+transport, freshness protocol or Dashboard write API. Acceptance for a future proposal
+must first identify the natural owner and prove that the view is a projection rather
+than a second authority. Until then, missing cross-Machine visibility is an explicit
+open capability, not permission to centralize local facts.
 
 ## Custom profile and future marketplace acceptance
 
@@ -129,7 +137,7 @@ no documented acceptance scenario is represented as already executed here.
 
 ## Maker onboarding acceptance
 
-From the official CLI, select a pinned community profile, create a new Managed Root
+From the official CLI, select a pinned community profile, create a new Lazurio Environment
 and perform a bounded task in an existing Codex or Claude Code using the maker's own
 model access. Prove initial instruction/skill adoption and visible missing capabilities.
 The fixture has no Organization and no hosting account or platform credits; empty

@@ -1,19 +1,50 @@
 # Decision proposals and convergence
 
-Status: review draft, 2026-09-08. These local identifiers are Factory proposals,
+Status: review draft, updated 2026-09-13. These local identifiers are Factory proposals,
 not new numbers in the maintained Lazurio decision register. They do not override
 legacy runtime contracts until the owning decision is amended and consumers migrate.
+
+## F0 — Confirmed vocabulary and responsibility split
+
+**Direction confirmed by the Principal:** the product concept is **Lazurio Environment
+Factory**, with **Factory** as its short name. The existing repository, path, package and
+slug identities are unchanged. Factory is public development/build/distribution source,
+is never installed on target Machines and produces Lazurio releases. Installed Lazurio
+contains Launchpad; Launchpad applies configuration and desired changes locally on each
+Machine. Factory never applies Machine changes.
+
+The resulting local working environment is a **Lazurio Environment**. Its physical
+location is a **Lazurio directory** or **environment directory**. Do not introduce
+`Managed Root` or `Lazurio Root` as user-facing proper nouns.
+
+**Conglomerate** is the end-state fleet/graph of Machines and Lazurio Environments across
+Organizations, with meaningful relationships and flows of data, information and work.
+It is not a directory, Organization, shared access boundary, ACL or authority. Dashboard
+is initially the whole-system overview/reasoning surface, not control authority. It keeps
+no parallel truth and grants no access. A future Dashboard-originated change must write
+through to the natural owner and be applied locally on the target Machine by Launchpad.
+
+GitHub remains connected-Organization access authority. Machine facts stay local;
+Personalspace, credentials and private content are not centralized or crossed. Machines
+share a versioned environment contract and conventions/interfaces, not a live shared
+directory or identical state.
+
+The inversion alternative—a central registry that also becomes authority—would add a
+second truth, synchronization/freshness failures and a new privacy/access boundary. The
+minimal retained model is an owner-backed projection/view. Whether even a non-authoritative
+central registry exists remains open because of the current no-central-registry and
+no-global-sync rule; no mechanism is selected in this draft.
 
 ## F1 — New Factory and installed product
 
 **Direction accepted in the request:** new TypeScript development repository, thin
-non-Git Managed Root, local and hosted work plus Buddy and AI Colleagues.
+non-Git environment directory, local and hosted work plus Buddy and AI Colleagues.
 **Implementation proposal, not yet approved:** one Bun/TypeScript product, native
 CLI and HTTP adapter, shared core, standalone distribution as the first supported
 consumer channel. React/Vite for the real Launchpad remains under consideration;
 the proof's tiny native HTML surface is not a final UI framework selection.
 
-Baseline incremental cleanup of the old Source Root retains deployment coupling.
+Baseline incremental cleanup of the legacy source-working directory retains deployment coupling.
 It remains the maintenance path for existing users, but cannot be the final daily
 installation model. A wholesale source copy reproduces hidden assumptions and
 licenses without review. Reuse behavior, fixtures and proven contracts selectively.
@@ -67,18 +98,24 @@ have different transactions and compatibility checks. See [recovery](migration-a
 
 | Existing authority | Proposed precise change | Preserved invariant / retirement evidence |
 | --- | --- | --- |
-| Decisions 0136 and resident-distribution knowledge | Factory source is optional development input; installed product owns runtime; preserve canonical Managed Root path | Source Root supported until explicit migration and restore proof; no second active Root |
+| Decision 0128 and existing `Conglomerate Host` terminology | Deprecation of the old Conglomerate root/product name remains in force; separately decide whether and how `Conglomerate` can become the fleet/graph term without colliding with the existing Machine profile | No silent canonical rewrite; explicit legacy terminology and consumer migration |
+| Decisions 0136 and resident-distribution knowledge | Factory source is optional development input; installed product owns runtime; preserve the canonical Lazurio directory path | Legacy source-working directory supported until explicit migration and restore proof; no second active environment directory |
 | Decision 0137 and hosted Machine contract proposals | Replace shared Team workshop execution with a dedicated environment per Principal; manifest-derived eligibility remains | Existing shared environments retained only for bounded transition; stop new shared cohorts after approved cutoff |
 | Decisions 0091, 0092, 0094 and Machine architecture | Clarify dedicated use versus infrastructure ownership and custodian recovery | Personalspace remains private, Buddy not Principal, AI Colleague own identity, parent operator boundary explicit |
 | Decision 0129 | In Managed installations product upgrade uses artifacts, Organization Git synchronization keeps its own existing semantics | No product updater scanning/rewriting repositories; Source update retired by cohort |
 | Decisions 0134, 0140 | Installed executable carries its runtime; development/module toolchain checks remain capability-specific | No automatic machine-wide PATH/tool upgrades; packaging does not claim third-party app dependencies bundled |
-| Decision 0142 | Root generation composes purpose, behavior and locale from versioned inputs | Organization language ownership and stable locale-neutral reason codes preserved |
+| Decision 0142 | Environment-directory generation composes purpose, behavior and locale from versioned inputs | Organization language ownership and stable locale-neutral reason codes preserved |
 | Collaboration constitution / 0132 | Define coordinator acceptance with real harness capability and independent verification | Principal retains scope, access and publication authority |
 
 Canonical amendments belong with the existing maintained decision owners. This
 preparation records replacement text and acceptance intent; it neither edits live
 host policy nor assigns new global decision IDs. Owner-specific migration and
 infrastructure details stay outside this repository.
+
+Open decisions are: possible conflict with the no-central-registry/no-global-sync rule;
+the natural owner of topology; discovery, projection and freshness; any future
+Dashboard write-through path; privacy and observability; physical repository rename;
+and migration of legacy terminology. None is an implied implementation task.
 
 ## Provenance and publication
 
@@ -136,7 +173,7 @@ full unspecified legacy feature parity is not an accepted promise.
 
 Accepted: three simultaneous worktree tests are isolated; a separately integrated,
 qualified candidate may then be explicitly selected for the Principal's whole dedicated
-Machine and real Root before stable release. These are not alternatives. A per-shell
+Machine and real Lazurio Environment before stable release. These are not alternatives. A per-shell
 override alone cannot prove daily activation. Repeated PATH rewriting and a separate
 candidate updater are rejected because they create conflicting selectors. Extend the
 installer's existing version selection and lifecycle owner; details remain proposals.

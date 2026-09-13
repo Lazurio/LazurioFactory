@@ -10,7 +10,7 @@ installer. Each future mutator must refuse unrecognized state before its first w
 | --- | --- | --- | --- |
 | Product upgrade | Authenticated release metadata, installed version, compatibility, current profile revision | Staged product version and its compatible generated output, activation pointer | Repo history, worktrees, Personalspace, module content, user preference intent |
 | Profile update | Current preferences, expected revision, installed templates and ownership manifest | Versioned preferences and enumerated generated instructions/config | Installed software, credentials, repositories, runtime data, grants |
-| Source → Managed migration | Exact source inventory, mount/Git/process state, supported destination, approved plan | Root placement and ownership transition using a dedicated migration procedure | Work loss, silent branch reset, remote rewrite, secret copying or automatic publish |
+| Legacy source-working → Lazurio Environment migration | Exact source inventory, mount/Git/process state, supported destination, approved plan | Environment-directory placement and ownership transition using a dedicated migration procedure | Work loss, silent branch reset, remote rewrite, secret copying or automatic publish |
 
 Organization Git synchronization remains an explicit existing operation. Do not hide
 fetch, checkout, stash creation or reset inside product/profile update.
@@ -69,20 +69,20 @@ request a bounded drain of affected managed processes and preserve open agent se
 If a running consumer cannot safely move, leave its old version installed and report
 pending activation or require an explicit maintenance window.
 
-## Source Root inventory and preservation
+## Legacy source-working directory inventory and preservation
 
 Migration must run on each actual machine only after consent to its exact plan. The
-supported target is `<home>/Lazurio`; an occupied target or ambiguous Root is a blocker.
+supported target is `<home>/Lazurio`; an occupied target or ambiguous environment directory is a blocker.
 Do not create a second active locator, infer identity from a basename, or recursively
-copy a Root with nested `.git` files and claim preservation.
+copy an environment directory with nested `.git` files and claim preservation.
 
 Inventory includes:
 
-- Root repo identity, full HEAD, branch, remotes and upstreams; staged, unstaged,
+- Legacy source repo identity, full HEAD, branch, remotes and upstreams; staged, unstaged,
   untracked and ignored user files; local-only commits and ongoing Git operations.
 - Every nested Organization/module/productionspace repo and permitted own Personalspace,
   including `.git` indirection, refs/reflogs, stashes, linked worktrees and their sidecars.
-- Worktrees outside the Root, bare common directories and absolute Git path references;
+- Worktrees outside the environment directory, bare common directories and absolute Git path references;
   runtime selection, open files/processes, leases and service definitions referencing paths.
 - Config and manifests with exact schema/version, custom files and generated ownership;
   credential references and access proof without reading/copying secret values into evidence.
@@ -101,7 +101,7 @@ are not guessed to be obsolete. Do not treat all ignored files as disposable cac
 Before relocating any linked worktree use supported Git relocation/repair with
 proof on a faithful fixture; never rewrite arbitrary `.git` pointer text blindly.
 
-## Source → Managed phases and reversal points
+## Legacy source-working → Lazurio Environment phases and reversal points
 
 | Phase | Exit proof | Reversal |
 | --- | --- | --- |
@@ -109,7 +109,7 @@ proof on a faithful fixture; never rewrite arbitrary `.git` pointer text blindly
 | Checkpoint | Offline-restorable verified copy, refs/index/dirty/untracked/stash/worktree parity, enough space | Delete only own unused staging after safe cleanup check |
 | Quiesce | Affected managed processes drained, active writers reconciled, fingerprint unchanged | Restart the exact old runtime; preserved sessions/files unchanged |
 | Prepare managed target | Valid staged artifacts and generation; nested Git mapping validated; no new active locator | Restore/check old paths before resuming any writer |
-| Switch active locator | One canonical Root and one runtime identity; native path/process checks | Before new writes, inverse relocation plus exact old runtime/config |
+| Switch active locator | One canonical environment directory and one runtime identity; native path/process checks | Before new writes, inverse relocation plus exact old runtime/config |
 | Verify and allow writes | Actual CLI/Launchpad/module smoke, credentials operation proof, data/Git parity | After new writes, reconcile/preserve new work before restoring old layout |
 | Retire source-as-runtime | Agreed observation period, backup restore drill, no dependent processes/paths | Historical source/backup retained until explicit retention decision |
 
@@ -119,13 +119,13 @@ perform a reviewed inverse migration or forward repair. Never silently discard n
 work to recover a green check. Interrupted operations resume only from a recognized
 journal phase and matching artifacts; ambiguity produces a no-op recovery report.
 
-The optional developer source checkout is migrated separately from active Root
+The optional developer source checkout is migrated separately from active environment-directory
 selection. Preserve legacy source refs, worktrees and provenance; do not redirect
 its remote to Factory because the names look related. Factory is a separate repo.
 
 ## Shared workshop → dedicated environments
 
-This is an owner-led infrastructure migration, separate from local Root migration.
+This is an owner-led infrastructure migration, separate from local environment migration.
 Approve the amendment and stop creating new shared cohorts at a named rollout gate.
 Inventory sessions, working copies, dirty branches, stashes, jobs, credentials and
 organization-owned data with the authorized owner; do not inspect foreign Personalspace.
@@ -148,7 +148,7 @@ by the Factory foundation.
 
 ## Legacy source checkout retirement
 
-`development/Lazurio` is not a target standard component of a Managed working Root;
+`development/Lazurio` is not a target standard component of a Lazurio Environment;
 Factory development belongs in the Organization's `productionspace/LazurioFactory`.
 Do not equate path relocation with runtime activation. Before retiring old source,
 inventory shell/launcher/service paths, dependencies, scripts, open sessions, module
@@ -158,6 +158,7 @@ state. Unattributed work or a remaining dependency blocks deletion; retain the c
 as migration provenance until the explicit cleanup gate. This preparation deletes none.
 
 The [two qualification modes](release-cycle.md) remain separate from migration. A fixture
-is not a real-root checkpoint. Integrated candidate activation on an existing Source
-Root cannot bypass the Source-to-Managed plan. A product downgrade cannot restore a
-root move, schema or user writes; the recovery plan must evaluate each independently.
+is not a real-environment checkpoint. Integrated candidate activation in a legacy
+source-working environment cannot bypass the explicit migration plan. A product downgrade
+cannot restore an environment-directory move, schema or user writes; the recovery plan
+must evaluate each independently.

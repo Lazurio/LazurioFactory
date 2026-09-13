@@ -1,11 +1,18 @@
-# Lazurio Factory
+# Lazurio Environment Factory
 
-Lazurio Factory is the TypeScript source, build and distribution foundation for
-Lazurio: a maintained installed product with a thin generated, non-Git Managed Root.
-People install a release; they do not clone this repository to do their daily work.
+Lazurio Environment Factory (**Factory** for short) is the public TypeScript source,
+build and distribution foundation for Lazurio. Factory produces Lazurio releases; it
+is never installed on target Machines and never applies changes to them. People install
+a Lazurio release, which contains Launchpad, and do not clone this repository for daily
+work.
+
+Launchpad applies configuration and desired changes locally on each Machine. The result
+is that Machine's **Lazurio Environment**; its physical location is the **Lazurio
+directory** or **environment directory**. Machines share a versioned environment
+contract and conventions/interfaces, not a live shared directory or identical state.
 
 **Status: architecture and implementation preparation.** The small executable proof
-tests distribution boundaries. There is no supported installer, updater, live Root
+tests distribution boundaries. There is no supported installer, updater, live environment
 migration or production release here yet. Existing Lazurio installations remain on
 their current supported implementation.
 

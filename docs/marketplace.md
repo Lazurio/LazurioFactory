@@ -16,7 +16,7 @@ and module licenses remain separate decisions.
 
 The active profile remains per Machine. A future marketplace distributes versioned
 profile definitions which a Principal deliberately selects for a particular local
-installation. Installing a definition is not importing another person's Root,
+installation. Installing a definition is not importing another person's environment directory,
 credentials, Organization data, Personalspace or authority. It must not update the
 same person's other Machines implicitly.
 
@@ -71,7 +71,7 @@ One synthetic producer publishes a declarative definition; two Machine fixtures 
 the same Principal activate different pinned profiles without sync. Unknown schema,
 unavailable capability, wrong compatibility and tampered definition fail before
 activation. A new version produces an explicit diff and does not expand authority.
-The test includes attempted secret/Root/data import and attempted install script.
+The test includes attempted secret/environment-directory/data import and attempted install script.
 It proves refusal without executing the content. Service launch and public profile
 publication retain their own explicit mandates.
 

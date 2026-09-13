@@ -57,15 +57,15 @@ flowchart LR
   B --> W[Three isolated worktree tests]
   W --> I[Selected changes integrated and rebuilt]
   I --> Q[Integrated candidate qualification without checkout]
-  Q --> A[Explicit whole-Machine activation on real Root]
+  Q --> A[Explicit whole-Machine activation in real Lazurio Environment]
   A --> O[Observed CLI and Launchpad use plus recovery evidence]
   O --> P[Explicit stable promotion of same qualified artifact]
 ```
 
 **Worktree isolation:** three agents may run concurrently, each from its own Factory
-worktree and exact artifact. Each gets an owned temporary Root and test Organization,
+worktree and exact artifact. Each gets an owned temporary environment directory and test Organization,
 process-local PATH entry, server/allocated ports, state locator and evidence directory.
-The test harness passes explicit paths; it must not fall back to the daily Root,
+The test harness passes explicit paths; it must not fall back to the daily Lazurio Environment,
 ambient credentials, normal user state or another test's server. Isolating a directory
 alone is insufficient: redirect all product-owned OS state paths and inherit only
 reviewed environment values. Fixtures contain no real Organization/Personalspace data.
@@ -78,8 +78,8 @@ reviewed source ref and built through the same packaging path as CI. Run the com
 candidate tests before activation; no worktree build independently replaces daily
 Lazurio. The Principal deliberately activates that exact candidate for the whole
 single-Principal Machine: ordinary CLI launches and Launchpad use it with the selected
-real Root and real Organizations. This is stronger than a temporary shell PATH override.
-If the current Root needs migration, the migration rehearsal and separately authorized
+real Lazurio Environment and real Organizations. This is stronger than a temporary shell PATH override.
+If the current environment directory needs migration, the migration rehearsal and separately authorized
 apply must finish first. Design agreement here is not an instruction to act on a host.
 
 ## Smallest proposed local interface
@@ -103,7 +103,7 @@ resolves one owner-controlled active version record; product versions live in im
 versioned directories. Do not overwrite a running executable or rewrite PATH for each
 candidate. Windows requires a native-tested launcher/activation method; symlinks and
 POSIX rename semantics cannot be assumed. Source changes have no effect until build
-and deliberate activation. Selecting a Root never selects a program, or vice versa.
+and deliberate activation. Selecting an environment directory never selects a program, or vice versa.
 
 ## Activation state and failure contract
 
@@ -114,7 +114,7 @@ and deliberate activation. Selecting a Root never selects a program, or vice ver
 | Drain | Existing lifecycle owner blocks new affected writes, lists running operations and their pinned artifact/generation | Busy operation stops activation or finishes under an explicitly safe pin; no unrelated process kill |
 | Select | One transaction changes active version for future launches; root stays independently selected | Interrupted switch recovers to a complete old/new record, never a mixed CLI/server installation |
 | Restart and health | Owned Launchpad restarts on selected artifact; new sessions capture version/generation; existing sessions keep snapshot and require restart before affected work | Health failure restores prior compatible program selection only when safe; incompatible data requires forward repair |
-| Observe | CLI and UI display artifact/version/Root; evidence includes cold launches and completion of real scoped tasks | Failed candidate halts promotion, preserves diagnostics privately and does not erase user work |
+| Observe | CLI and UI display artifact/version/environment directory; evidence includes cold launches and completion of real scoped tasks | Failed candidate halts promotion, preserves diagnostics privately and does not erase user work |
 
 Record server/session artifact and generation at start. Existing sessions do not change
 instructions midway through work; a stale client must reconnect/restart or receive an
@@ -128,7 +128,7 @@ target artifacts, not a rebuild after personal acceptance.
 
 ## Required lifecycle evidence
 
-Run three simultaneous fixtures and prove distinct PATH resolution, Root, state and
+Run three simultaneous fixtures and prove distinct PATH resolution, environment directory, state and
 processes; deliberately collide a port and terminate one run without harming its peers
 or daily installation. Separately prove integrated Machine activation with cold CLI
 and Launchpad starts, a busy writer, old session, build failure, interrupted switch,

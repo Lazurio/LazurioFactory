@@ -20,7 +20,7 @@ does not satisfy this consumer.
 | Git preservation checks | Reuse justified invariants and fixtures with provenance | Dirty/stash/worktree/ref and interrupted-recovery assertions survive the port |
 | Large legacy modules | Decompose only by demonstrated state/ownership seams | Smaller file count or line count is not acceptance |
 | Dependency repair | Preserve current lockfile-owned rebuild semantics | Failed derived dependencies stay isolated; no conflation with user-data rollback |
-| Source-only install assumptions | Remove from daily Managed path | Installed consumer works without source tree, test runner, build scripts or development tools |
+| Source-only install assumptions | Remove from the daily Lazurio Environment path | Installed consumer works without source tree, test runner, build scripts or development tools |
 
 Any temporary compatibility adapter gets an exact source ref, narrow input/output
 contract, owner and retirement condition in its introducing PR. It must not create
@@ -30,7 +30,7 @@ no longer uses it. Do not retain all legacy JavaScript behind a generic bridge.
 
 ## Doctor — accepted design direction, not implemented
 
-The Principal accepted a small TypeScript diagnostic orchestrator for Managed installations,
+The Principal accepted a small TypeScript diagnostic orchestrator for installed Lazurio Environments,
 with reusable probes judged individually. Installer, runtime and Doctor share the same
 validators; CLI and Launchpad consume the same typed,
 locale-neutral results and severity/policy decisions. Check is read-only; repair is
