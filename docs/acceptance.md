@@ -50,6 +50,15 @@ fixes continue with their owners; selectively port proven contracts with provena
 
 ## Platform matrix and truth labels
 
+Launch acceptance includes four composed journeys: Windows local human, macOS local
+human, remote human on a virtual Machine, and Buddy on a virtual Machine. Exercise each
+in Czech and English using the same shared Folder foundation. Verify generated instruction
+and UI language, unchanged Organization/Personalspace paths and content, and actual
+execution-Machine OS detection rather than the connecting client's OS. Changing language
+does not relocate or translate user data. Record the selected virtual-Machine OS and
+qualified support; no unspecified OS/hosting combination is implicitly supported.
+These are future acceptance scenarios, not completed tests or four template forks.
+
 Target native acceptance: macOS arm64/x64, Linux glibc arm64/x64 and Windows x64/arm64.
 Each cell is independently `not qualified`, `compiled`, `native tested` or `supported`.
 Optional musl and unsupported CPU/OS versions must not be silently treated as qualified.

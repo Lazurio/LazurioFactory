@@ -169,6 +169,21 @@ open and outside this public architecture.
 
 ## Environment composition
 
+Confirmed launch minimum: compose Windows local human use, macOS local human use,
+remote human use on a virtual Machine, and Buddy on a virtual Machine from one shared
+Folder foundation, not four separately maintained templates. Compose the execution
+Machine's detected OS (Windows/Linux/macOS), local versus remote use, purpose and
+language. A Windows client accessing Linux configures the Linux execution environment.
+Remote use is an access context, not a permission grant or a relocation operation.
+
+Each of the four launch journeys must support Czech and English for generated agent
+instructions and Lazurio UI. Language changes do not rename Folder paths or translate
+Organization/Personalspace content. All variants preserve the same logical Folder layout
+and existing working paths during migration; absolute home paths may differ by OS.
+The virtual-Machine OS/support combinations remain to be qualified, not inferred here.
+This minimum does not waive the existing native three-OS/two-harness acceptance gates
+or promise every possible combination. It does not grant access to private Personalspace.
+
 | Axis | Meaning | Does not mean |
 | --- | --- | --- |
 | Platform | Detected OS, architecture, supported ABI and capabilities | Linux is Buddy; Windows is nontechnical |

@@ -106,6 +106,14 @@ or explicitly resolved before the dedicated cohort's acceptance.
 
 ## F3 — Profile is behavior, not authority
 
+**Launch composition confirmed:** one shared Folder foundation must compose Windows
+local human, macOS local human, remote virtual-Machine human and virtual-Machine Buddy
+journeys, each in Czech and English. Execution OS, local/remote use, purpose and locale
+are independent dimensions, not four template forks. Detect OS on the execution Machine.
+Preserve Folder layout and Organization/Personalspace paths/content across variants and
+language changes. Exact virtual-Machine OS support remains an explicit qualification
+choice. Existing native OS/harness and custody gates remain binding.
+
 **Direction accepted:** coordinator behavior, configurable technical detail and
 publication mandate are distinct. **Accepted ownership:** per-Machine profile, independently selectable for the same
 Principal on different Machines. No automatic sync or global override engine.
